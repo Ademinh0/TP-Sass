@@ -13,7 +13,7 @@ npm install
 Compilation unique :
 
 ```bash
-npm run sass
+npm run sass  
 ```
 
 Compilation automatique à chaque modification :
