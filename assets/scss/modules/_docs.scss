@@ -1,0 +1,38 @@
+// Les blocs de couleurs ronds (.echantillon) et les carrés d'espacement rouges (.bloc-espacement) 
+//ne servent que pour présenter la documentation.
+//Ils ne font partie ni des formulaires, ni des cartes
+
+
+.section-doc {
+  background-color: #ffffff;
+  padding: var(--espacement-tg);
+  border-radius: var(--rayon-m);
+  margin-bottom: var(--espacement-tg);
+  border: 1px solid var(--couleur-bordure);
+
+  &__titre {
+    font-size: var(--taille-police-sous-titre);
+    margin-bottom: var(--espacement-g);
+  }
+}
+
+.grille-echantillons { display: flex; flex-wrap: wrap; gap: var(--espacement-m); margin-bottom: var(--espacement-tg); }
+.echantillon {
+  display: flex; flex-direction: column; align-items: center; gap: var(--espacement-p);
+  &__pastille {
+    width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--couleur-bordure);
+    &--texte-principal  { background-color: var(--couleur-texte-principal); }
+    
+  }
+  &__libelle { font-size: var(--taille-police-petite); color: var(--couleur-texte-secondaire); }
+}
+
+.grille-espacements { display: flex; align-items: flex-end; gap: var(--espacement-g); }
+.bloc-espacement {
+  display: flex; flex-direction: column; align-items: center; gap: var(--espacement-p);
+  &__visuel {
+    background-color: var(--couleur-principale);
+    &--p { width: var(--espacement-p); height: var(--espacement-p); }
+    /* ... (les autres modificateurs de taille) ... */
+  }
+}

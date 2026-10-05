@@ -1,6 +1,7 @@
-@import './badges';
-@import './boutons';
-@import './cartes';
-@import './faq';
-@import './filtre';
-@import './formulaire';
+@forward './badges';
+@forward './boutons';
+@forward './cartes';
+@forward './faq';
+@forward './filtre';
+@forward './formulaire';
+@forward './docs';
