@@ -136,8 +136,6 @@ header {
   width: var(--espacement-p);
   height: var(--espacement-p);
 }
-.bloc-espacement__visuel {
-  /* ... (les autres modificateurs de taille) ... */
-}
+
 
 /*# sourceMappingURL=style.css.map */
