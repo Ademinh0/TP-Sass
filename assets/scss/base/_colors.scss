@@ -1,17 +1,20 @@
-$color-text-primary:#1C1B2E;
-$color-text-normal:#3A3950;
-$color-text-secondary:#6B6A80;
+@use '../abstracts/variables' as vars;
 
-$color-back:white;
-$color-back-2:#F4F5F7;
-$color-border:#E3E5EA;
-$color-border-2:#CBD0D8;
+//map-get permet d'injecter la variable $ crée avant.
 
-$color-primary:#C8402A;
-$color-primary-hover:#A3311F;
-$color-accent:#F4C95D;
-$color-error:#B3261E;
 
-$color-scene-lac:#1F4E8C;
-$color-scene-forest:#2F6B3A;
-$color-scene-kiosk:#B87A1E;
+:root {
+  --couleur-texte-principal:  #{map-get(vars.$couleurs, 'texte-principal')};
+  --couleur-texte-courant:    #{map-get(vars.$couleurs, 'texte-courant')};
+  --couleur-texte-secondaire: #{map-get(vars.$couleurs, 'texte-secondaire')};
+  --couleur-fond-alterne:     #{map-get(vars.$couleurs, 'fond-alterne')};
+  --couleur-bordure:          #{map-get(vars.$couleurs, 'bordure')};
+  --couleur-principale:       #{map-get(vars.$couleurs, 'principale')};
+  --couleur-survol:           #{map-get(vars.$couleurs, 'survol')};
+  --couleur-accent:           #{map-get(vars.$couleurs, 'accent')};
+  --couleur-erreur:           #{map-get(vars.$couleurs, 'erreur')};
+
+  --couleur-scene-lac:        #{map-get(vars.$couleurs, 'scene-lac')};
+  --couleur-scene-foret:      #{map-get(vars.$couleurs, 'scene-foret')};
+  --couleur-scene-kiosque:    #{map-get(vars.$couleurs, 'scene-kiosque')};
+}

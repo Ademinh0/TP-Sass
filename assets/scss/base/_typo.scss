@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as vars;
+
+:root {
+  --taille-police-petite:       #{map-get(vars.$tailles-police, 'petite')};
+  --taille-police-courante:     #{map-get(vars.$tailles-police, 'courante')};
+  --taille-police-introduction: #{map-get(vars.$tailles-police, 'introduction')};
+  --taille-police-sous-titre:   #{map-get(vars.$tailles-police, 'sous-titre')};
+  --taille-police-titre:        #{map-get(vars.$tailles-police, 'titre')};
+}

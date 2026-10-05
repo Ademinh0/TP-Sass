@@ -1,19 +1,13 @@
+@use '../abstracts/variables' as vars;
 
-body{
-    display :
-flex;
-flex-direction :
-column;
-justify-content :
-flex-start;
-align-items :
-flex-start;
-width :
-1440px;
-height :
-5452px;
-padding :
-0px;
+:root {
+  --espacement-p:   #{map-get(vars.$espacements, 'p')};//petit
+  --espacement-m:   #{map-get(vars.$espacements, 'm')};//moyen
+  --espacement-g:   #{map-get(vars.$espacements, 'g')}; //grand
+  --espacement-tg:  #{map-get(vars.$espacements, 'tg')};
+  --espacement-max: #{map-get(vars.$espacements, 'max')};//espacement max
+
+  --rayon-p: #{map-get(vars.$rayons, 'p')};//petit rayon
+  --rayon-m: #{map-get(vars.$rayons, 'm')};//grand rayon
 }
-
 

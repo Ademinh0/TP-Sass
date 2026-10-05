@@ -1,0 +1,16 @@
+.badge-scene {
+  padding: var(--espacement-m) var(--espacement-g);
+  color: #ffffff;
+  border-radius: var(--rayon-m);
+  font-weight: bold;
+
+  &__valeur {
+    display: block;
+    font-weight: normal;
+    font-size: var(--taille-police-petite);
+  }
+
+  &--lac     { background-color: var(--couleur-scene-lac); }
+  &--foret   { background-color: var(--couleur-scene-foret); }
+  &--kiosque { background-color: var(--couleur-scene-kiosque); }
+}
