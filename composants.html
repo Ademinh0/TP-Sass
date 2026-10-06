@@ -4,18 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliothèque de composants - Résonances</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="page-composants">
 
-    <!-- ================= JETONS ================= -->
-    <section class="section-doc">
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="site-header__interieur">
+            <a class="site-header__marque" href="index.html">
+                <span class="site-header__logo" aria-hidden="true"></span>
+                <span>
+                    <span class="site-header__nom">RÉSONANCES</span>
+                    <span class="site-header__date">Festival · 9 au 11 juillet 2027</span>
+                </span>
+            </a>
+
+            <nav class="site-header__nav" aria-label="Navigation principale">
+                <a class="site-header__lien" href="index.html">Accueil</a>
+                <a class="site-header__lien" href="#cartes">Programme</a>
+                <a class="site-header__lien" href="billetterie.html">Billetterie</a>
+                <a class="site-header__lien" href="infos.html">Infos pratiques</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <button class="bouton bouton--contour" type="button">Mode sombre</button>
+                <button class="bouton bouton--principal" type="button">Réserver</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- TITRE DE PAGE -->
+    <section class="entete-bibliotheque">
+        <div class="conteneur-page">
+            <p class="entete-bibliotheque__fil-ariane">Accueil / Bibliothèque de composants</p>
+            <h1 class="entete-bibliotheque__titre">Bibliothèque de composants</h1>
+            <p class="entete-bibliotheque__description">Tous les composants du site, avec leurs variantes et leurs états.</p>
+        </div>
+    </section>
+
+    <!-- SOMMAIRE -->
+    <nav class="navigation-composants" aria-label="Sommaire des composants">
+        <div class="navigation-composants__interieur conteneur-page">
+            <a class="navigation-composants__lien" href="#jetons">Jetons</a>
+            <a class="navigation-composants__lien" href="#boutons">Boutons</a>
+            <a class="navigation-composants__lien" href="#badges">Badges</a>
+            <a class="navigation-composants__lien" href="#cartes">Cartes</a>
+            <a class="navigation-composants__lien" href="#formulaires">Formulaires</a>
+            <a class="navigation-composants__lien" href="#filtres">Filtres</a>
+            <a class="navigation-composants__lien" href="#faq">Questions fréquentes</a>
+        </div>
+    </nav>
+
+    <!-- JETONS -->
+    <section class="section-doc" id="jetons">
         <h2 class="section-doc__titre">Jetons</h2>
         <div class="section-doc__separateur"></div>
-        <p class="section-doc__description">Toutes les valeurs fondamentales de la charte visuelle, utilisées par les composants.</p>
+        <p class="section-doc__description">Couleurs, typographie et espacements utilisés par tous les composants.</p>
 
         <div class="section-doc__contenu">
-            <!-- COULEURS DE LA CHARTE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Couleurs</span>
                 <div class="grille-echantillons">
@@ -23,42 +73,34 @@
                         <div class="echantillon__pastille echantillon__pastille--texte-principal"></div>
                         <span class="echantillon__libelle">Texte principal</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--texte-courant"></div>
                         <span class="echantillon__libelle">Texte courant</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--texte-secondaire"></div>
-                        <span class="echantillon__libelle">Texte second</span>
+                        <span class="echantillon__libelle">Texte secondaire</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--fond-alterne"></div>
                         <span class="echantillon__libelle">Fond alterné</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--bordure"></div>
                         <span class="echantillon__libelle">Bordures</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--principale"></div>
                         <span class="echantillon__libelle">Principale</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--survol"></div>
                         <span class="echantillon__libelle">Survol</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--accent"></div>
                         <span class="echantillon__libelle">Accent</span>
                     </div>
-
                     <div class="echantillon">
                         <div class="echantillon__pastille echantillon__pastille--erreur"></div>
                         <span class="echantillon__libelle">Erreur</span>
@@ -66,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- COULEURS DES SCÈNES -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Scènes</span>
                 <div class="grille-scenes">
@@ -76,7 +117,6 @@
                 </div>
             </div>
 
-            <!-- TYPOGRAPHIE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Typographie</span>
                 <div class="demostration-typo">
@@ -88,43 +128,41 @@
                 </div>
             </div>
 
-            <!-- ESPACEMENTS -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Espacements</span>
                 <div class="grille-espacements">
                     <div class="bloc-espacement">
                         <div class="bloc-espacement__visuel bloc-espacement__visuel--p"></div>
-                        <span class="bloc-espacement__libelle">8</span>
+                        <span class="bloc-espacement__libelle">8 px</span>
                     </div>
                     <div class="bloc-espacement">
                         <div class="bloc-espacement__visuel bloc-espacement__visuel--m"></div>
-                        <span class="bloc-espacement__libelle">16</span>
+                        <span class="bloc-espacement__libelle">16 px</span>
                     </div>
                     <div class="bloc-espacement">
                         <div class="bloc-espacement__visuel bloc-espacement__visuel--g"></div>
-                        <span class="bloc-espacement__libelle">24</span>
+                        <span class="bloc-espacement__libelle">24 px</span>
                     </div>
                     <div class="bloc-espacement">
                         <div class="bloc-espacement__visuel bloc-espacement__visuel--tg"></div>
-                        <span class="bloc-espacement__libelle">40</span>
+                        <span class="bloc-espacement__libelle">40 px</span>
                     </div>
                     <div class="bloc-espacement">
                         <div class="bloc-espacement__visuel bloc-espacement__visuel--max"></div>
-                        <span class="bloc-espacement__libelle">64</span>
+                        <span class="bloc-espacement__libelle">64 px</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= BOUTONS ================= -->
-    <section class="section-doc">
+    <!-- BOUTONS -->
+    <section class="section-doc" id="boutons">
         <h2 class="section-doc__titre">Boutons</h2>
         <div class="section-doc__separateur"></div>
         <p class="section-doc__description">Un composant de base, des variantes de couleur et de taille, une icône facultative et des états.</p>
 
         <div class="section-doc__contenu">
-            <!-- BOUTON DE BASE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Bouton de base</span>
                 <div class="groupe-elements">
@@ -132,7 +170,6 @@
                 </div>
             </div>
 
-            <!-- COULEURS -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Couleurs</span>
                 <div class="groupe-elements">
@@ -145,7 +182,6 @@
                 </div>
             </div>
 
-            <!-- TAILLES -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Tailles</span>
                 <div class="groupe-elements">
@@ -155,7 +191,6 @@
                 </div>
             </div>
 
-            <!-- AVEC ICÔNE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Avec icône</span>
                 <div class="groupe-elements">
@@ -163,10 +198,10 @@
                         <span class="bouton__icone">+</span> Ajouter au programme
                     </button>
                     <button class="bouton bouton--secondaire">
-                        <span class="bouton__icone">🎟</span> Réserver
+                        <span class="bouton__icone">◆</span> Réserver
                     </button>
                     <button class="bouton bouton--contour bouton--icone-seule" aria-label="Favori">
-                        <span class="bouton__icone">♥</span>
+                        <span class="bouton__icone">♡</span>
                     </button>
                     <button class="bouton bouton--contour">
                         Suivant <span class="bouton__icone">→</span>
@@ -174,7 +209,6 @@
                 </div>
             </div>
 
-            <!-- COMBINAISONS ET ÉTATS -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Combinaisons et états</span>
                 <div class="grille-etats">
@@ -182,22 +216,18 @@
                         <button class="bouton bouton--secondaire bouton--grand">Secondaire grand</button>
                         <span class="bloc-etat__legende">Combinaison</span>
                     </div>
-
                     <div class="bloc-etat">
                         <button class="bouton bouton--principal bouton--survol">Survol</button>
                         <span class="bloc-etat__legende">Survol</span>
                     </div>
-
                     <div class="bloc-etat">
                         <button class="bouton bouton--principal bouton--focus">Focus clavier</button>
                         <span class="bloc-etat__legende">Focus clavier</span>
                     </div>
-
                     <div class="bloc-etat">
                         <button class="bouton bouton--principal" disabled>Désactivé</button>
                         <span class="bloc-etat__legende">Désactivé</span>
                     </div>
-
                     <div class="bloc-etat">
                         <button class="bouton bouton--principal bouton--chargement">
                             <span class="bouton__indicateur"></span>
@@ -209,14 +239,13 @@
         </div>
     </section>
 
-    <!-- ================= BADGES ================= -->
-    <section class="section-doc">
+    <!-- BADGES -->
+    <section class="section-doc" id="badges">
         <h2 class="section-doc__titre">Badges</h2>
         <div class="section-doc__separateur"></div>
         <p class="section-doc__description">Pour signaler une scène, un statut ou un nombre.</p>
 
         <div class="section-doc__contenu">
-            <!-- BADGE DE BASE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Badge de base</span>
                 <div class="groupe-elements">
@@ -224,7 +253,6 @@
                 </div>
             </div>
 
-            <!-- SCÈNES -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Scènes</span>
                 <div class="groupe-elements">
@@ -234,7 +262,6 @@
                 </div>
             </div>
 
-            <!-- STATUTS -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Statuts</span>
                 <div class="groupe-elements">
@@ -244,7 +271,6 @@
                 </div>
             </div>
 
-            <!-- TAILLES -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Tailles</span>
                 <div class="groupe-elements">
@@ -253,7 +279,6 @@
                 </div>
             </div>
 
-            <!-- STYLES -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Styles</span>
                 <div class="groupe-elements">
@@ -263,7 +288,6 @@
                 </div>
             </div>
 
-            <!-- COMPTEUR -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Compteur</span>
                 <div class="groupe-elements">
@@ -278,19 +302,19 @@
         </div>
     </section>
 
-    <!-- ================= CARTES ================= -->
-    <section class="section-doc">
+    <!-- CARTES -->
+    <section class="section-doc" id="cartes">
         <h2 class="section-doc__titre">Cartes</h2>
         <div class="section-doc__separateur"></div>
         <p class="section-doc__description">La carte d'artiste, ses variantes, et les autres cartes du site.</p>
 
         <div class="section-doc__contenu">
+
             <!-- CARTE DE BASE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Carte de base</span>
                 <div class="grille-cartes">
-                    
-                    <!-- Standard -->
+
                     <article class="carte-artiste">
                         <div class="carte-artiste__image"></div>
                         <div class="carte-artiste__contenu">
@@ -301,7 +325,6 @@
                         </div>
                     </article>
 
-                    <!-- Sans image -->
                     <article class="carte-artiste carte-artiste--sans-image">
                         <div class="carte-artiste__contenu">
                             <span class="badge badge--kiosque">Le Kiosque</span>
@@ -311,7 +334,6 @@
                         </div>
                     </article>
 
-                    <!-- Titre deux lignes + actions -->
                     <article class="carte-artiste">
                         <div class="carte-artiste__image"></div>
                         <div class="carte-artiste__contenu">
@@ -333,7 +355,6 @@
                 <span class="ligne-doc__libelle">Variantes</span>
                 <div class="grille-cartes">
 
-                    <!-- Mise en avant (Tête d'affiche) -->
                     <article class="carte-artiste carte-artiste--mise-en-avant">
                         <div class="carte-artiste__image"></div>
                         <div class="carte-artiste__contenu">
@@ -344,7 +365,6 @@
                         </div>
                     </article>
 
-                    <!-- Compacte -->
                     <article class="carte-artiste carte-artiste--sans-image">
                         <div class="carte-artiste__image"></div>
                         <div class="carte-artiste__contenu">
@@ -355,7 +375,6 @@
                         </div>
                     </article>
 
-                    <!-- Compacte 2 -->
                     <article class="carte-artiste carte-artiste--sans-image">
                         <div class="carte-artiste__image"></div>
                         <div class="carte-artiste__contenu">
@@ -391,7 +410,6 @@
                 <span class="ligne-doc__libelle">Autres cartes</span>
                 <div class="grille-cartes">
 
-                    <!-- Pass 1 jour -->
                     <article class="carte-pass">
                         <h3 class="carte-pass__titre">Pass 1 jour</h3>
                         <div class="carte-pass__prix">49 €</div>
@@ -403,7 +421,6 @@
                         <button class="bouton bouton--contour">Choisir</button>
                     </article>
 
-                    <!-- Pass 3 jours (Mise en avant) -->
                     <article class="carte-pass carte-pass--mise-en-avant">
                         <span class="badge badge--statut-places carte-pass__badge">Le plus choisi</span>
                         <h3 class="carte-pass__titre">Pass 3 jours</h3>
@@ -416,14 +433,12 @@
                         <button class="bouton bouton--principal">Choisir</button>
                     </article>
 
-                    <!-- Carte Scène -->
                     <article class="carte-scene carte-scene--lac">
                         <h3 class="carte-scene__titre">Scène du Lac</h3>
                         <p class="carte-scene__style">Pop et rock</p>
                         <a href="#" class="carte-scene__lien">Découvrir la scène →</a>
                     </article>
 
-                    <!-- Carte Info Pratique -->
                     <article class="carte-info">
                         <div class="carte-info__numero">1</div>
                         <div class="carte-info__contenu">
@@ -437,18 +452,18 @@
         </div>
     </section>
 
-    <!-- ================= FORMULAIRES ================= -->
-    <section class="section-doc">
+    <!-- FORMULAIRES -->
+    <section class="section-doc" id="formulaires">
         <h2 class="section-doc__titre">Formulaires</h2>
         <div class="section-doc__separateur"></div>
         <p class="section-doc__description">Champ de saisie, liste déroulante et case à cocher, avec leurs états.</p>
 
         <div class="section-doc__contenu">
-            <!-- Champs de saisie -->
+
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Champ de saisie</span>
                 <div class="grille-formulaires">
-                    
+
                     <div class="champ">
                         <label class="champ__etiquette" for="nom">Nom</label>
                         <input type="text" id="nom" class="champ__saisie" value="Durand">
@@ -476,11 +491,10 @@
                 </div>
             </div>
 
-            <!-- Liste et cases à cocher -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Liste et case</span>
                 <div class="grille-formulaires-alignes">
-                    
+
                     <div class="champ">
                         <label class="champ__etiquette" for="nb-pass">Nombre de pass</label>
                         <div class="champ__select-wrapper">
@@ -506,11 +520,12 @@
 
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- ================= FILTRES ================= -->
-    <section class="section-doc">
+    <!-- FILTRES -->
+    <section class="section-doc" id="filtres">
         <h2 class="section-doc__titre">Filtres</h2>
         <div class="section-doc__separateur"></div>
         <p class="section-doc__description">Groupe de boutons qui filtre le programme ; un seul filtre est sélectionné à la fois.</p>
@@ -518,6 +533,7 @@
         <div class="section-doc__contenu">
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Groupe de filtres</span>
+
                 <div>
                     <div class="groupe-filtres">
                         <button class="bouton-filtre">Toutes les scènes</button>
@@ -525,28 +541,32 @@
                         <button class="bouton-filtre">Scène de la Forêt</button>
                         <button class="bouton-filtre">Le Kiosque</button>
                     </div>
+
                     <p class="legende-discrete">Normal · sélectionné (ici « Scène du Lac »)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= QUESTIONS FRÉQUENTES ================= -->
-    <section class="section-doc">
+    <!-- FAQ -->
+    <section class="section-doc" id="faq">
         <h2 class="section-doc__titre">Questions fréquentes</h2>
         <div class="section-doc__separateur"></div>
         <p class="section-doc__description">Accordéon : chaque question s'ouvre et se ferme indépendamment.</p>
 
         <div class="section-doc__contenu">
-            <!-- Fermée -->
+
+            <!-- FERMÉE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Fermée</span>
+
                 <div class="accordeon">
                     <details class="accordeon__item">
                         <summary class="accordeon__en-tete">
                             <span class="accordeon__question">Les enfants sont-ils acceptés ?</span>
-                            <span class="accordeon__icone">▼</span>
+                            <span class="accordeon__icone"></span>
                         </summary>
+
                         <div class="accordeon__contenu">
                             <p>Oui, l'entrée est gratuite pour les moins de 12 ans accompagnés d'un adulte.</p>
                         </div>
@@ -554,23 +574,70 @@
                 </div>
             </div>
 
-            <!-- Ouverte -->
+            <!-- OUVERTE -->
             <div class="ligne-doc">
                 <span class="ligne-doc__libelle">Ouverte</span>
+
                 <div class="accordeon">
                     <details class="accordeon__item" open>
                         <summary class="accordeon__en-tete">
                             <span class="accordeon__question">Puis-je revendre mon pass ?</span>
-                            <span class="accordeon__icone">▲</span>
+                            <span class="accordeon__icone"></span>
                         </summary>
+
                         <div class="accordeon__contenu">
                             <p>Oui, via la plateforme officielle de revente, jusqu'à 48 heures avant le festival. Le pass est alors réédité au nom du nouvel acheteur.</p>
                         </div>
                     </details>
                 </div>
             </div>
+
         </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="site-footer__interieur">
+
+            <div class="site-footer__grille">
+
+                <div class="site-footer__colonne site-footer__colonne--marque">
+                    <h2 class="site-footer__titre">RÉSONANCES</h2>
+                    <p class="site-footer__texte">Festival de musique au bord du lac des Aulnes. Trois jours, trois scènes, une quarantaine d'artistes.</p>
+                </div>
+
+                <div class="site-footer__colonne site-footer__colonne--festival">
+                    <h2 class="site-footer__titre">Le festival</h2>
+                    <div class="site-footer__liens">
+                        <a class="site-footer__lien" href="#cartes">Programme</a>
+                        <a class="site-footer__lien" href="billetterie.html">Billetterie</a>
+                        <a class="site-footer__lien" href="infos.html">Infos pratiques</a>
+                    </div>
+                </div>
+
+                <div class="site-footer__colonne site-footer__colonne--contact">
+                    <h2 class="site-footer__titre">Contact</h2>
+                    <p class="site-footer__coordonnees">
+                        contact@resonances-festival.fr<br>
+                        04 00 00 00 00
+                    </p>
+                </div>
+
+                <div class="site-footer__colonne site-footer__colonne--newsletter">
+                    <h2 class="site-footer__titre">Newsletter</h2>
+                    <form class="site-footer__newsletter">
+                        <input class="site-footer__champ" type="email" placeholder="Votre e-mail" aria-label="Votre e-mail">
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="site-footer__bas">
+                © 2027 Association Résonances · Mentions légales · Accessibilité · Crédits photos
+            </div>
+
+        </div>
+    </footer>
 
 </body>
 </html>

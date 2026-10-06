@@ -1,0 +1,470 @@
+.grille-cartes {
+  width: 1200px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+
+.carte-artiste {
+  width: 360px;
+  height: 366px;
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 12px;
+  background: #fff;
+
+  &__image {
+    width: 100%;
+    height: 206px;
+    border-bottom: 6px solid var(--couleur-scene-lac);
+    background: #D9D9D9;
+  }
+
+  &:has(.badge--foret) .carte-artiste__image {
+    border-bottom-color: var(--couleur-scene-foret);
+  }
+
+  &:has(.badge--kiosque) .carte-artiste__image {
+    border-bottom-color: var(--couleur-scene-kiosque);
+  }
+
+  &__contenu {
+    height: 160px;
+    position: relative;
+    padding: 20px;
+  }
+
+  &__titre {
+    margin: 16px 0 0;
+    color: var(--couleur-texte-principal);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__metas {
+    margin: 8px 0 0;
+    color: var(--couleur-texte-secondaire);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+
+  &__description {
+    margin: 14px 0 0;
+    color: var(--couleur-texte-courant);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  &__lien {
+    display: inline-block;
+    margin-top: 13px;
+    color: var(--couleur-principale);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    text-decoration: none;
+  }
+
+
+  /* Carte sans image */
+
+  &--sans-image:not(:has(.carte-artiste__image)) {
+    height: 166px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: var(--couleur-scene-kiosque);
+    }
+
+    .carte-artiste__contenu {
+      height: 166px;
+      padding-top: 26px;
+    }
+  }
+
+
+  /* Carte avec titre long et boutons */
+
+  &:has(.carte-artiste__actions) {
+    height: 422px;
+
+    .carte-artiste__contenu {
+      height: 216px;
+    }
+
+    .carte-artiste__titre {
+      line-height: 28px;
+    }
+
+    .carte-artiste__metas {
+      margin-top: 4px;
+    }
+  }
+
+
+  &__actions {
+    height: 64px;
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    left: -20px;
+    padding: 12px 20px 16px;
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid var(--couleur-bordure);
+
+    .bouton:first-child {
+      width: 141px;
+      padding-inline: 20px;
+    }
+
+    .bouton:last-child {
+      width: 115px;
+      padding-inline: 20px;
+    }
+  }
+
+
+  /* Carte mise en avant */
+
+  &--mise-en-avant {
+    width: 420px;
+    height: 452px;
+
+    .carte-artiste__image {
+      height: 286px;
+    }
+
+    .carte-artiste__contenu {
+      height: 166px;
+      padding: 20px;
+    }
+
+    .carte-artiste__titre {
+      margin-top: 16px;
+      font-size: 26px;
+      line-height: 31px;
+    }
+
+    .carte-artiste__metas {
+      margin-top: 7px;
+    }
+
+    .carte-artiste__lien {
+      margin-top: 13px;
+    }
+  }
+
+
+  /* Carte horizontale */
+
+  &--horizontale {
+    width: 720px;
+    height: 240px;
+    display: flex;
+
+    &::after {
+      content: '';
+      width: 6px;
+      height: 240px;
+      position: absolute;
+      top: 0;
+      left: 274px;
+      background: var(--couleur-scene-foret);
+    }
+
+    .carte-artiste__image {
+      width: 274px;
+      height: 240px;
+      flex: 0 0 274px;
+      border: 0;
+      background: #D9D9D9;
+    }
+
+    .carte-artiste__contenu {
+      width: 446px;
+      height: 240px;
+      padding: 24px 24px 0 30px;
+    }
+
+    .carte-artiste__titre {
+      margin-top: 16px;
+      font-size: 22px;
+      line-height: 27px;
+    }
+
+    .carte-artiste__metas {
+      margin-top: 9px;
+    }
+
+    .carte-artiste__description {
+      width: 300px;
+      margin-top: 17px;
+    }
+
+    .carte-artiste__lien {
+      margin-top: 24px;
+    }
+  }
+}
+
+
+/* Cartes compactes */
+
+#cartes .ligne-doc:nth-child(2) .carte-artiste--sans-image {
+  width: 280px;
+  height: 305px;
+
+  &::before {
+    display: none;
+  }
+
+  .carte-artiste__image {
+    width: 280px;
+    height: 156px;
+  }
+
+  .carte-artiste__contenu {
+    height: 149px;
+    padding: 16px;
+  }
+
+  .carte-artiste__titre {
+    margin-top: 16px;
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .carte-artiste__metas {
+    margin-top: 9px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .carte-artiste__lien {
+    margin-top: 13px;
+  }
+}
+
+
+/* ================= PASS ================= */
+
+.carte-pass {
+  width: 300px;
+  height: 360px;
+  position: relative;
+  flex: 0 0 300px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 12px;
+  background: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 130px;
+    left: 24px;
+    width: 252px;
+    height: 1px;
+    background: var(--couleur-bordure);
+  }
+
+  &__titre {
+    position: absolute;
+    top: 34px;
+    left: 24px;
+    margin: 0;
+    color: var(--couleur-texte-principal);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  &__prix {
+    position: absolute;
+    top: 68px;
+    left: 24px;
+    color: var(--couleur-principale);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+  }
+
+  &__liste {
+    position: absolute;
+    top: 153px;
+    left: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--couleur-texte-courant);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+
+    li {
+      height: 30px;
+    }
+  }
+
+  > .bouton {
+    width: 252px;
+    position: absolute;
+    top: 292px;
+    left: 24px;
+  }
+
+  &--mise-en-avant {
+    border-color: var(--couleur-texte-principal);
+    background: var(--couleur-texte-principal);
+
+    &::after {
+      background: #3A3950;
+    }
+
+    .carte-pass__titre {
+      color: #fff;
+    }
+
+    .carte-pass__prix {
+      color: var(--couleur-accent);
+    }
+
+    .carte-pass__liste {
+      color: #fff;
+    }
+  }
+
+  &__badge {
+    width: 128px;
+    height: 28px;
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    z-index: 2;
+    border-radius: 14px;
+    background: var(--couleur-accent);
+    color: var(--couleur-texte-principal);
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+
+/* ================= CARTE SCÈNE ================= */
+
+.carte-scene {
+  width: 260px;
+  height: 170px;
+  position: relative;
+  flex: 0 0 260px;
+  border-radius: 12px;
+  color: #fff;
+
+  &--lac {
+    background: var(--couleur-scene-lac);
+  }
+
+  &__titre {
+    position: absolute;
+    top: 58px;
+    left: 24px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+  }
+
+  &__style {
+    position: absolute;
+    top: 92px;
+    left: 24px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+
+  &__lien {
+    position: absolute;
+    top: 133px;
+    left: 24px;
+    color: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+  }
+}
+
+
+/* ================= CARTE INFO ================= */
+
+.carte-info {
+  width: 268px;
+  height: 170px;
+  position: relative;
+  flex: 0 0 268px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 12px;
+  background: #fff;
+
+  &__numero {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--couleur-fond-alterne);
+    color: var(--couleur-principale);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__titre {
+    position: absolute;
+    top: 33px;
+    left: 72px;
+    margin: 0;
+    color: var(--couleur-texte-principal);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  &__texte {
+    width: 220px;
+    position: absolute;
+    top: 85px;
+    left: 24px;
+    margin: 0;
+    color: var(--couleur-texte-courant);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+
+@media (max-width: 1240px) {
+
+  .grille-cartes {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

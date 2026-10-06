@@ -5,7 +5,7 @@
   "description": "Festival Résonances - Étape 1 : environnement Sass et architecture SMACSS",
   "scripts": {
     "sass:watch": "sass assets/scss/main.scss assets/css/style.css --watch",
-    "sass:build": "sass scss/main.scss:css/style.css --style=compressed --no-source-map"
+    "sass:build": "sass assets/scss/main.scss assets/css/style.css --style=compressed --no-source-map"
   },
   "devDependencies": {
     "sass": "^1.77.0"

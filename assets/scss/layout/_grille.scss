@@ -1,24 +1,174 @@
 .page-composants {
-  background-color: var(--couleur-fond-alterne);
+  min-width: 320px;
+  margin: 0;
+  background: #ffffff;
   color: var(--couleur-texte-principal);
-  padding: var(--espacement-tg);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+}
 
-  &__conteneur {
-    max-width: 1200px;
-    margin: 0 auto;
+.conteneur-page,
+.section-doc,
+.site-header__interieur,
+.site-footer__interieur,
+.navigation-composants__interieur {
+  width: 1200px;
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   TITRE DE PAGE
+   ========================================================= */
+
+.entete-bibliotheque {
+  height: 220px;
+  background: var(--couleur-fond-alterne);
+
+  .conteneur-page {
+    height: 100%;
+    position: relative;
   }
 
-  &__en-tete {
-    margin-bottom: var(--espacement-tg);
+  &__fil-ariane {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin: 0;
+
+    color: var(--couleur-texte-secondaire);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
   }
 
   &__titre {
-    font-size: var(--taille-police-titre);
-    margin-bottom: var(--espacement-p);
+    position: absolute;
+    top: 84px;
+    left: 0;
+    margin: 0;
+
+    color: var(--couleur-texte-principal);
+
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
   }
 
   &__description {
-    font-size: var(--taille-police-introduction);
-    color: var(--couleur-texte-secondaire);
+    position: absolute;
+    top: 148px;
+    left: 0;
+    margin: 0;
+
+    color: var(--couleur-texte-courant);
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
   }
 }
+
+
+/* =========================================================
+   SOMMAIRE
+   ========================================================= */
+
+.navigation-composants {
+  height: 40px;
+  margin-top: 37px;
+
+  &__interieur {
+    height: 40px;
+
+    position: relative;
+
+    border-bottom: 1px solid var(--couleur-bordure);
+  }
+
+  &__lien {
+    position: absolute;
+    top: 0;
+
+    color: var(--couleur-principale);
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__lien:nth-child(1) {
+    left: 0;
+  }
+
+  &__lien:nth-child(2) {
+    left: 86px;
+  }
+
+  &__lien:nth-child(3) {
+    left: 181px;
+  }
+
+  &__lien:nth-child(4) {
+    left: 267px;
+  }
+
+  &__lien:nth-child(5) {
+    left: 353px;
+  }
+
+  &__lien:nth-child(6) {
+    left: 484px;
+  }
+
+  &__lien:nth-child(7) {
+    left: 579px;
+  }
+}
+
+
+/* =========================================================
+   HAUTEURS DES SECTIONS
+   ========================================================= */
+
+#jetons {
+  height: 542px;
+  margin-top: 51px;
+}
+
+#boutons {
+  height: 598px;
+}
+
+#badges {
+  height: 526px;
+}
+
+#cartes {
+  height: 2008px;
+}
+
+#formulaires {
+  height: 394px;
+}
+
+#filtres {
+  height: 258px;
+}
+
+
+/*
+  La FAQ ne doit PAS avoir une hauteur fixe.
+  Elle doit grandir quand une question est ouverte.
+*/
+#faq {
+  min-height: 430px;
+  height: auto;
+}
+
+

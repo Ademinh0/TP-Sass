@@ -1,16 +1,271 @@
 .badge-scene {
-  padding: var(--espacement-m) var(--espacement-g);
-  color: #ffffff;
-  border-radius: var(--rayon-m);
-  font-weight: bold;
+  width: 180px;
+  height: 52px;
+  position: relative;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
 
   &__valeur {
     display: block;
-    font-weight: normal;
+    font-weight: 400;
     font-size: var(--taille-police-petite);
   }
 
-  &--lac     { background-color: var(--couleur-scene-lac); }
-  &--foret   { background-color: var(--couleur-scene-foret); }
-  &--kiosque { background-color: var(--couleur-scene-kiosque); }
+  &::after {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    color: var(--couleur-texte-secondaire);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+
+  &--lac {
+    background: var(--couleur-scene-lac);
+
+    &::after {
+      content: '#1F4E8C';
+    }
+  }
+
+  &--foret {
+    background: var(--couleur-scene-foret);
+
+    &::after {
+      content: '#2F6B3A';
+    }
+  }
+
+  &--kiosque {
+    background: var(--couleur-scene-kiosque);
+    color: var(--couleur-texte-principal);
+
+    &::after {
+      content: '#B87A1E';
+    }
+  }
+}
+
+
+.badge {
+  height: 24px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--couleur-fond-alterne);
+  color: var(--couleur-texte-principal);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  white-space: nowrap;
+
+  &--lac {
+    background: var(--couleur-scene-lac);
+    color: #fff;
+  }
+
+  &--foret {
+    background: var(--couleur-scene-foret);
+    color: #fff;
+  }
+
+  &--kiosque {
+    background: var(--couleur-scene-kiosque);
+    color: var(--couleur-texte-principal);
+  }
+
+  &--statut-nouveau {
+    background: #E3F1E6;
+    color: #2F6B3A;
+  }
+
+  &--statut-places {
+    background: #FDF1D6;
+    color: #7A4F00;
+  }
+
+  &--statut-complet {
+    background: #FBE3E1;
+    color: #B3261E;
+  }
+
+  &--petit {
+    height: 24px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &--grand {
+    height: 32px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  &--contour {
+    border: 1.5px solid var(--couleur-scene-foret);
+    background: #fff;
+    color: var(--couleur-scene-foret);
+  }
+
+  &--angles-droits {
+    border-radius: 0;
+  }
+}
+
+
+.badge-compteur {
+  width: 209px;
+  height: 58px;
+  position: relative;
+
+  .bouton {
+    width: 197px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  &__pastille {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: var(--couleur-principale);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+}
+
+
+/* Positionnement dans la documentation */
+
+#badges .groupe-elements {
+  width: 960px;
+  height: 100%;
+  position: relative;
+}
+
+
+#badges .groupe-elements > * {
+  position: absolute;
+  top: 0;
+}
+
+
+#badges .ligne-doc:nth-child(1) .badge {
+  left: 0;
+  width: 56px;
+}
+
+
+#badges .ligne-doc:nth-child(2) .badge:nth-child(1) {
+  left: 0;
+  width: 106px;
+}
+
+
+#badges .ligne-doc:nth-child(2) .badge:nth-child(2) {
+  left: 130px;
+  width: 142px;
+}
+
+
+#badges .ligne-doc:nth-child(2) .badge:nth-child(3) {
+  left: 290px;
+  width: 92px;
+}
+
+
+#badges .ligne-doc:nth-child(3) .badge:nth-child(1) {
+  left: 0;
+  width: 70px;
+}
+
+
+#badges .ligne-doc:nth-child(3) .badge:nth-child(2) {
+  left: 100px;
+  width: 135px;
+}
+
+
+#badges .ligne-doc:nth-child(3) .badge:nth-child(3) {
+  left: 260px;
+  width: 70px;
+}
+
+
+#badges .ligne-doc:nth-child(4) .badge:nth-child(1) {
+  top: 8px;
+  left: 0;
+  width: 56px;
+}
+
+
+#badges .ligne-doc:nth-child(4) .badge:nth-child(2) {
+  left: 80px;
+  width: 73px;
+}
+
+
+#badges .ligne-doc:nth-child(5) .badge:nth-child(1) {
+  left: 0;
+  width: 114px;
+}
+
+
+#badges .ligne-doc:nth-child(5) .badge:nth-child(2) {
+  left: 130px;
+  width: 70px;
+}
+
+
+#badges .ligne-doc:nth-child(5) .badge:nth-child(3) {
+  left: 230px;
+  width: 114px;
+}
+
+
+#badges .ligne-doc:nth-child(6) .badge-compteur {
+  top: 0;
+  left: 0;
+}
+
+
+@media (max-width: 1240px) {
+
+  #badges .groupe-elements {
+    width: 100%;
+    height: auto;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  #badges .groupe-elements > * {
+    position: static !important;
+    width: auto !important;
+  }
+
+  #badges .badge-compteur {
+    width: 209px !important;
+    height: 58px;
+    position: relative !important;
+  }
 }

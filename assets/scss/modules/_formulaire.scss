@@ -1,0 +1,202 @@
+.grille-formulaires {
+  width: 940px;
+  height: 101px;
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  column-gap: 20px;
+}
+
+
+.grille-formulaires-alignes {
+  width: 960px;
+  height: 76px;
+  position: relative;
+}
+
+
+.champ {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+
+  &__etiquette {
+    height: 17px;
+    margin-bottom: 11px;
+    color: var(--couleur-texte-principal);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  &__saisie,
+  .liste-deroulante {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--couleur-bordure-champ);
+    border-radius: 6px;
+    outline: 0;
+    background-color: #fff;
+    color: var(--couleur-texte-principal);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+
+  &__aide,
+  &__erreur {
+    height: 16px;
+    margin-top: 9px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__aide {
+    color: var(--couleur-texte-secondaire);
+  }
+
+  &__erreur {
+    color: var(--couleur-erreur);
+  }
+
+  &--focus .champ__saisie {
+    border: 2px solid var(--couleur-principale);
+    box-shadow: 0 0 0 3px var(--couleur-focus);
+  }
+
+  &--erreur .champ__saisie {
+    border: 2px solid var(--couleur-erreur);
+  }
+
+  &--desactive .champ__saisie {
+    border: 1px solid var(--couleur-bordure-champ);
+    background: var(--couleur-fond-alterne);
+    color: var(--couleur-desactive);
+  }
+
+  &__select-wrapper {
+    position: relative;
+  }
+}
+
+
+.grille-formulaires-alignes .champ {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.liste-deroulante {
+  appearance: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--couleur-texte-principal) 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--couleur-texte-principal) 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 22px) 20px,
+    calc(100% - 16px) 20px;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+
+.case-a-cocher {
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  &__saisie {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__carre {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--couleur-bordure-champ);
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  &__saisie:checked + &__carre {
+    border-color: var(--couleur-principale);
+    background: var(--couleur-principale);
+
+    &::after {
+      content: '✓';
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+  &__libelle {
+    color: var(--couleur-texte-courant);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+}
+
+
+.grille-formulaires-alignes > .case-a-cocher:nth-child(2) {
+  position: absolute;
+  top: 40px;
+  left: 340px;
+}
+
+
+.grille-formulaires-alignes > .case-a-cocher:nth-child(3) {
+  position: absolute;
+  top: 40px;
+  left: 680px;
+}
+
+
+@media (max-width: 1240px) {
+
+  .grille-formulaires {
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(2, 220px);
+    row-gap: 20px;
+  }
+
+  .grille-formulaires-alignes {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 24px;
+  }
+
+  .grille-formulaires-alignes .champ,
+  .grille-formulaires-alignes > .case-a-cocher {
+    position: static !important;
+  }
+}
