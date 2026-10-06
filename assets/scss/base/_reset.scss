@@ -1,13 +1,21 @@
 @use '../abstracts/variables' as vars;
 
 :root {
-  --espacement-p:   #{map-get(vars.$espacements, 'p')};//petit
-  --espacement-m:   #{map-get(vars.$espacements, 'm')};//moyen
-  --espacement-g:   #{map-get(vars.$espacements, 'g')}; //grand
+  --espacement-p:   #{map-get(vars.$espacements, 'p')}; // petit
+  --espacement-m:   #{map-get(vars.$espacements, 'm')}; // moyen
+  --espacement-g:   #{map-get(vars.$espacements, 'g')}; // grand
   --espacement-tg:  #{map-get(vars.$espacements, 'tg')};
-  --espacement-max: #{map-get(vars.$espacements, 'max')};//espacement max
-
-  --rayon-p: #{map-get(vars.$rayons, 'p')};//petit rayon
-  --rayon-m: #{map-get(vars.$rayons, 'm')};//grand rayon
+  --espacement-max: #{map-get(vars.$espacements, 'max')}; // espacement max
+  --rayon-p:        #{map-get(vars.$rayons, 'p')};
+  --rayon-m:        #{map-get(vars.$rayons, 'm')};
+  --rayon-g:        #{map-get(vars.$rayons, 'g')};
+  --rayon-case:     #{map-get(vars.$rayons, 'case')};
+  --rayon-pilule:   #{map-get(vars.$rayons, 'pilule')};
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }

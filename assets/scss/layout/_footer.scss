@@ -1,0 +1,110 @@
+.site-footer {
+  height: 260px;
+  background: #1C1B2E;
+  color: #C9C7D6;
+
+  &__interieur {
+    height: 260px;
+    position: relative;
+  }
+
+  &__grille {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__colonne {
+    position: absolute;
+    top: 56px;
+
+    &--marque {
+      top: 50px;
+      left: 0;
+      width: 360px;
+    }
+
+    &--festival {
+      left: 520px;
+      width: 150px;
+    }
+
+    &--contact {
+      left: 740px;
+      width: 210px;
+    }
+
+    &--newsletter {
+      left: 1000px;
+      width: 200px;
+    }
+  }
+
+  &__titre {
+    margin: 0 0 15px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  &__colonne--marque .site-footer__titre {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__texte,
+  &__coordonnees {
+    margin: 0;
+    color: #C9C7D6;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  &__liens {
+    display: grid;
+    gap: 11px;
+  }
+
+  &__lien {
+    color: #C9C7D6;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+  }
+
+  &__newsletter {
+    margin: 0;
+  }
+
+  &__champ {
+    width: 200px;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #4A4960;
+    border-radius: 6px;
+    outline: 0;
+    background: #2A2940;
+    color: #fff;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__champ::placeholder {
+    color: #8E8CA3;
+  }
+
+  &__bas {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 1200px;
+    padding-top: 19px;
+    border-top: 1px solid #3A3950;
+    color: #8E8CA3;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+}

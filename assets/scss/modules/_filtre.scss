@@ -1,0 +1,57 @@
+.groupe-filtres {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.bouton-filtre {
+  height: 44px;
+  padding: 0 25px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 22px;
+  background: #fff;
+  color: var(--couleur-texte-courant);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--couleur-texte-principal);
+  }
+
+  &--actif {
+    border-color: var(--couleur-texte-principal);
+    background: var(--couleur-texte-principal);
+    color: #fff;
+  }
+}
+
+
+/* Largeurs de la démonstration Figma */
+
+#filtres .bouton-filtre:nth-child(1) {
+  width: 193px;
+}
+
+#filtres .bouton-filtre:nth-child(2) {
+  width: 148px;
+}
+
+#filtres .bouton-filtre:nth-child(3) {
+  width: 193px;
+}
+
+#filtres .bouton-filtre:nth-child(4) {
+  width: 130px;
+}
+
+
+@media (max-width: 1240px) {
+
+  .groupe-filtres {
+    flex-wrap: wrap;
+  }
+}

@@ -1,7 +1,153 @@
-$header-w:1440px;
-$header-h:88px;
+.site-header {
+  width: 100%;
+  height: 88px;
+  background: #fff;
+  border-bottom: 1px solid var(--couleur-bordure);
 
-header{
-    width: $header-w;
-    height: $header-w;
+  &__interieur {
+    height: 88px;
+    position: relative;
+  }
+
+  &__marque {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 204px;
+    height: 43px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__logo {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    flex: 0 0 36px;
+    margin-top: 4px;
+    border-radius: 50%;
+    background: var(--couleur-principale);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &__nom {
+    display: block;
+    color: var(--couleur-texte-principal);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__date {
+    display: block;
+    margin-top: 4px;
+    color: var(--couleur-texte-secondaire);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    white-space: nowrap;
+  }
+
+  &__nav {
+    width: 475px;
+    height: 19px;
+    position: absolute;
+    top: 36px;
+    left: 400px;
+  }
+
+  &__lien {
+    position: absolute;
+    top: 0;
+    color: var(--couleur-texte-secondaire);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__lien:nth-child(1) {
+    left: 0;
+  }
+
+  &__lien:nth-child(2) {
+    left: 103px;
+  }
+
+  &__lien:nth-child(3) {
+    left: 223px;
+  }
+
+  &__lien:nth-child(4) {
+    left: 362px;
+  }
+
+  &__lien:hover {
+    color: var(--couleur-texte-principal);
+  }
+
+  &__actions {
+    position: absolute;
+    top: 20px;
+    left: 950px;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__actions .bouton--contour {
+    width: 150px;
+    padding-inline: 0;
+  }
+
+  &__actions .bouton--principal {
+    width: 84px;
+    padding-inline: 0;
+  }
+}
+
+
+@media (max-width: 1240px) {
+
+  .site-header__interieur {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .site-header__marque,
+  .site-header__nav,
+  .site-header__actions {
+    position: static;
+  }
+
+  .site-header__marque {
+    align-items: center;
+  }
+
+  .site-header__logo {
+    margin-top: 0;
+  }
+
+  .site-header__nav {
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 20px;
+  }
+
+  .site-header__lien {
+    position: static;
+  }
 }

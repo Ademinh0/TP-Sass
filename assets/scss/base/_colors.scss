@@ -1,19 +1,19 @@
 @use '../abstracts/variables' as vars;
 
-//map-get permet d'injecter la variable $ crée avant.
-
-
+// map-get permet d'injecter la variable $ créée avant.
 :root {
   --couleur-texte-principal:  #{map-get(vars.$couleurs, 'texte-principal')};
   --couleur-texte-courant:    #{map-get(vars.$couleurs, 'texte-courant')};
   --couleur-texte-secondaire: #{map-get(vars.$couleurs, 'texte-secondaire')};
   --couleur-fond-alterne:     #{map-get(vars.$couleurs, 'fond-alterne')};
   --couleur-bordure:          #{map-get(vars.$couleurs, 'bordure')};
+  --couleur-bordure-champ:    #{map-get(vars.$couleurs, 'bordure-champ')};
   --couleur-principale:       #{map-get(vars.$couleurs, 'principale')};
   --couleur-survol:           #{map-get(vars.$couleurs, 'survol')};
   --couleur-accent:           #{map-get(vars.$couleurs, 'accent')};
   --couleur-erreur:           #{map-get(vars.$couleurs, 'erreur')};
-
+  --couleur-focus:            #{map-get(vars.$couleurs, 'focus')};
+  --couleur-desactive:        #{map-get(vars.$couleurs, 'desactive')};
   --couleur-scene-lac:        #{map-get(vars.$couleurs, 'scene-lac')};
   --couleur-scene-foret:      #{map-get(vars.$couleurs, 'scene-foret')};
   --couleur-scene-kiosque:    #{map-get(vars.$couleurs, 'scene-kiosque')};

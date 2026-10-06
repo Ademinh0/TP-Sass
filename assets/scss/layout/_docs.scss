@@ -1,92 +1,60 @@
-// Les blocs de couleurs ronds (.echantillon)
-// et les carrés d'espacement rouges (.bloc-espacement)
-// servent uniquement à présenter la documentation.
-
-
-/* =========================================================
-   STRUCTURE GÉNÉRALE
-   ========================================================= */
+// Mise en page de la page 
+// regle les problemes de superpositions et de la mise en page 
 
 .section-doc {
-  width: 1200px;
-
   position: relative;
-
-  margin-inline: auto;
-
-  background-color: #ffffff;
+  background: #fff;
 
   &__titre {
     position: absolute;
     top: 0;
     left: 0;
-
     margin: 0;
-
     color: var(--couleur-texte-principal);
-
     font-size: 28px;
     font-weight: 700;
     line-height: 34px;
   }
 
   &__separateur {
-    width: 1200px;
-    height: 2px;
-
     position: absolute;
     top: 48px;
     left: 0;
-
-    background-color: var(--couleur-principale);
+    width: 1200px;
+    height: 2px;
+    background: var(--couleur-principale);
   }
 
   &__description {
     position: absolute;
     top: 68px;
     left: 0;
-
     margin: 0;
-
     color: var(--couleur-texte-secondaire);
-
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
   }
 
   &__contenu {
+    position: absolute;
+    inset: 0;
     width: 1200px;
     height: 100%;
-
-    position: absolute;
-
-    inset: 0;
   }
 }
 
 
-/* =========================================================
-   LIGNE DE DOCUMENTATION
-   ========================================================= */
-
 .ligne-doc {
   width: 1200px;
-
   position: absolute;
   left: 0;
-
   display: grid;
-
-  grid-template-columns:
-    240px
-    960px;
-
+  grid-template-columns: 240px 960px;
   align-items: start;
 
   &__libelle {
     color: var(--couleur-texte-principal);
-
     font-size: 15px;
     font-weight: 700;
     line-height: 18px;
@@ -100,163 +68,143 @@
 }
 
 
-/* =========================================================
-   JETONS
-   ========================================================= */
+.conteneur-sombre {
+  width: 250px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--couleur-texte-principal);
+}
 
 
-/* ---------- COULEURS ---------- */
+/* ================= JETONS ================= */
 
 #jetons .ligne-doc:nth-child(1) {
   top: 122px;
   height: 75px;
 }
 
-#jetons .ligne-doc:nth-child(1) .ligne-doc__libelle {
-  margin-top: 33px;
-}
-
-
-.grille-echantillons {
-  height: 75px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(9, 82px);
-
-  column-gap: 24px;
-}
-
-
-.echantillon {
-  height: 75px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  gap: 12px;
-
-  &__pastille {
-    width: 48px;
-    height: 48px;
-
-    flex: 0 0 48px;
-
-    border: 1px solid var(--couleur-bordure);
-    border-radius: 50%;
-
-    &--texte-principal {
-      background-color: var(--couleur-texte-principal);
-    }
-
-    &--texte-courant {
-      background-color: var(--couleur-texte-courant);
-    }
-
-    &--texte-secondaire {
-      background-color: var(--couleur-texte-secondaire);
-    }
-
-    &--fond-alterne {
-      background-color: var(--couleur-fond-alterne);
-    }
-
-    &--bordure {
-      background-color: var(--couleur-bordure);
-    }
-
-    &--principale {
-      background-color: var(--couleur-principale);
-    }
-
-    &--survol {
-      background-color: var(--couleur-survol);
-    }
-
-    &--accent {
-      background-color: var(--couleur-accent);
-    }
-
-    &--erreur {
-      background-color: var(--couleur-erreur);
-    }
-  }
-
-  &__libelle {
-    color: var(--couleur-texte-secondaire);
-
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
-
-    white-space: nowrap;
-  }
-}
-
-
-/* ---------- SCÈNES ---------- */
-
 #jetons .ligne-doc:nth-child(2) {
   top: 230px;
   height: 79px;
 }
-
-#jetons .ligne-doc:nth-child(2) .ligne-doc__libelle {
-  margin-top: 33px;
-}
-
-
-.grille-scenes {
-  height: 79px;
-
-  display: flex;
-  align-items: flex-start;
-
-  gap: 20px;
-}
-
-
-/* ---------- TYPOGRAPHIE ---------- */
 
 #jetons .ligne-doc:nth-child(3) {
   top: 338px;
   height: 48px;
 }
 
-#jetons .ligne-doc:nth-child(3) .ligne-doc__libelle {
+#jetons .ligne-doc:nth-child(4) {
+  top: 426px;
+  height: 65px;
+}
+
+
+#jetons .ligne-doc:nth-child(1) .ligne-doc__libelle,
+#jetons .ligne-doc:nth-child(2) .ligne-doc__libelle {
+  margin-top: 33px;
+}
+
+
+#jetons .ligne-doc:nth-child(3) .ligne-doc__libelle,
+#jetons .ligne-doc:nth-child(4) .ligne-doc__libelle {
   margin-top: 23px;
+}
+
+
+.grille-echantillons {
+  height: 75px;
+  display: grid;
+  grid-template-columns: repeat(9, 82px);
+  column-gap: 24px;
+}
+
+
+.echantillon {
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  &__pastille {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 50%;
+
+    &--texte-principal {
+      background: var(--couleur-texte-principal);
+    }
+
+    &--texte-courant {
+      background: var(--couleur-texte-courant);
+    }
+
+    &--texte-secondaire {
+      background: var(--couleur-texte-secondaire);
+    }
+
+    &--fond-alterne {
+      background: var(--couleur-fond-alterne);
+    }
+
+    &--bordure {
+      background: var(--couleur-bordure);
+    }
+
+    &--principale {
+      background: var(--couleur-principale);
+    }
+
+    &--survol {
+      background: var(--couleur-survol);
+    }
+
+    &--accent {
+      background: var(--couleur-accent);
+    }
+
+    &--erreur {
+      background: var(--couleur-erreur);
+    }
+  }
+
+  &__libelle {
+    color: var(--couleur-texte-secondaire);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    white-space: nowrap;
+  }
+}
+
+
+.grille-scenes {
+  height: 79px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 
 .demostration-typo {
   width: 810px;
   height: 48px;
-
   display: grid;
-
-  grid-template-columns:
-    160px
-    200px
-    150px
-    90px
-    auto;
-
+  grid-template-columns: 160px 200px 150px 90px auto;
   column-gap: 40px;
-
   align-items: start;
-
   white-space: nowrap;
 
   &__element {
     color: var(--couleur-texte-principal);
-
     font-weight: 400;
 
     &--titre {
       margin-top: 0;
-
       font-size: 40px;
       font-weight: 700;
       line-height: 48px;
@@ -264,7 +212,6 @@
 
     &--sous-titre {
       margin-top: 12px;
-
       font-size: 28px;
       font-weight: 700;
       line-height: 34px;
@@ -272,21 +219,18 @@
 
     &--introduction {
       margin-top: 20px;
-
       font-size: 20px;
       line-height: 24px;
     }
 
     &--courant {
       margin-top: 24px;
-
       font-size: 16px;
       line-height: 19px;
     }
 
     &--petit {
       margin-top: 26px;
-
       font-size: 14px;
       line-height: 17px;
     }
@@ -294,42 +238,26 @@
 }
 
 
-/* ---------- ESPACEMENTS ---------- */
-
-#jetons .ligne-doc:nth-child(4) {
-  top: 426px;
-  height: 65px;
-}
-
-#jetons .ligne-doc:nth-child(4) .ligne-doc__libelle {
-  margin-top: 23px;
-}
-
+/* Les 5 carrés 8 / 16 / 24 / 40 / 64 */
 
 .grille-espacements {
   width: 600px;
   height: 65px;
-
   display: grid;
-
-  grid-template-columns:
-    repeat(5, 120px);
+  grid-template-columns: repeat(5, 120px);
 }
 
 
 .bloc-espacement {
   width: 120px;
   height: 65px;
-
   display: flex;
   align-items: flex-end;
-
   gap: 8px;
 
   &__visuel {
     flex: 0 0 auto;
-
-    background-color: var(--couleur-principale);
+    background: var(--couleur-principale);
 
     &--p {
       width: 8px;
@@ -358,20 +286,17 @@
   }
 
   &__libelle {
+    flex: 0 0 auto;
     color: var(--couleur-texte-secondaire);
-
     font-size: 12px;
     font-weight: 400;
     line-height: 15px;
-
     white-space: nowrap;
   }
 }
 
 
-/* =========================================================
-   BOUTONS
-   ========================================================= */
+/* ================= BOUTONS ================= */
 
 #boutons .ligne-doc:nth-child(1) {
   top: 122px;
@@ -420,9 +345,7 @@
 }
 
 
-/* =========================================================
-   BADGES
-   ========================================================= */
+/* ================= BADGES ================= */
 
 #badges .ligne-doc:nth-child(1) {
   top: 126px;
@@ -473,14 +396,11 @@
 }
 
 
-/* =========================================================
-   CARTES
-   ========================================================= */
+/* ================= CARTES ================= */
 
 #cartes .ligne-doc {
-  height: auto;
-
   display: block;
+  height: auto;
 }
 
 
@@ -503,14 +423,12 @@
 
 #cartes .ligne-doc__libelle {
   display: block;
-
   margin: 0;
 }
 
 
 #cartes .ligne-doc .grille-cartes {
   position: absolute;
-
   left: 0;
 }
 
@@ -527,9 +445,7 @@
 }
 
 
-/* =========================================================
-   FORMULAIRES
-   ========================================================= */
+/* ================= FORMULAIRES ================= */
 
 #formulaires .ligne-doc:nth-child(1) {
   top: 132px;
@@ -548,9 +464,7 @@
 }
 
 
-/* =========================================================
-   FILTRES
-   ========================================================= */
+/* ================= FILTRES ================= */
 
 #filtres .ligne-doc:nth-child(1) {
   top: 122px;
@@ -565,140 +479,106 @@
 
 .legende-discrete {
   margin: 16px 0 0;
-
   color: var(--couleur-texte-secondaire);
-
   font-size: 12px;
   font-weight: 400;
   line-height: 15px;
 }
 
 
-/* =========================================================
-   FAQ
-   ========================================================= */
+/* ================= FAQ ================= */
 
-/*
-  Contrairement aux autres sections,
-  la FAQ fonctionne dans le flux normal.
-
-  Ça permet aux questions ouvertes de pousser
-  automatiquement celles qui sont en dessous
-  ET de pousser le footer.
-*/
-
-#faq {
-  width: 1200px;
-
-  min-height: 430px;
-  height: auto;
-
-  position: relative;
-
-  padding-bottom: 80px;
+#faq .ligne-doc:nth-child(1) {
+  top: 122px;
+  height: 64px;
 }
 
 
-/* On remet le titre dans le flux normal uniquement pour FAQ */
-
-#faq .section-doc__titre {
-  position: static;
-
-  margin: 0;
-
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 34px;
+#faq .ligne-doc:nth-child(2) {
+  top: 210px;
+  height: 140px;
 }
 
 
-/* y = 48 */
-
-#faq .section-doc__separateur {
-  width: 1200px;
-  height: 2px;
-
-  position: static;
-
-  margin-top: 14px;
-
-  background-color: var(--couleur-principale);
+#faq .ligne-doc:nth-child(1) .ligne-doc__libelle,
+#faq .ligne-doc:nth-child(2) .ligne-doc__libelle {
+  margin-top: 25px;
 }
 
 
-/* y = 68 */
+/* Responsive */
 
-#faq .section-doc__description {
-  position: static;
+@media (max-width: 1240px) {
 
-  margin: 18px 0 0;
+  #jetons,
+  #boutons,
+  #badges,
+  #cartes,
+  #formulaires,
+  #filtres,
+  #faq {
+    height: auto;
+    padding-bottom: 70px;
+  }
 
-  color: var(--couleur-texte-secondaire);
+  #jetons {
+    margin-top: 40px;
+  }
 
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
-}
+  .section-doc__titre,
+  .section-doc__separateur,
+  .section-doc__description,
+  .section-doc__contenu,
+  .ligne-doc,
+  #cartes .ligne-doc,
+  #cartes .ligne-doc .grille-cartes {
+    position: static;
+  }
 
+  .section-doc__separateur {
+    width: 100%;
+    margin-top: 14px;
+  }
 
-/*
-  Titre :
-  34 px
+  .section-doc__description {
+    margin-top: 18px;
+  }
 
-  + 14
-  + 2
-  + 18
-  + 19
+  .section-doc__contenu {
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+    display: grid;
+    gap: 32px;
+  }
 
-  = 87 px
+  .ligne-doc {
+    width: 100%;
+    height: auto !important;
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
 
-  Première question à y 122 :
-  122 - 87 = 35
-*/
+  .ligne-doc__libelle {
+    margin-top: 0 !important;
+  }
 
-#faq .section-doc__contenu {
-  width: 1200px;
-  height: auto;
+  #cartes .ligne-doc .grille-cartes {
+    margin-top: 16px;
+  }
 
-  position: static;
+  .grille-echantillons {
+    grid-template-columns: repeat(auto-fit, 82px);
+    row-gap: 20px;
+  }
 
-  margin-top: 35px;
+  .demostration-typo {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-  display: flex;
-  flex-direction: column;
-
-  gap: 24px;
-}
-
-
-/* Chaque question reste dans le flux */
-
-#faq .ligne-doc {
-  width: 1200px;
-
-  min-height: 64px;
-  height: auto;
-
-  position: static;
-
-  display: grid;
-
-  grid-template-columns:
-    240px
-    960px;
-
-  align-items: start;
-}
-
-
-/* Libellé Fermée / Ouverte */
-
-#faq .ligne-doc__libelle {
-  margin-top: 22px;
-
-  color: var(--couleur-texte-principal);
-
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 18px;
+  .demostration-typo__element {
+    margin-top: 0 !important;
+  }
 }
