@@ -1,37 +1,47 @@
 $couleurs: (
-  'texte-principal':  #18192b,
-  'texte-courant':    #2b2c3d,
+  'texte-principal': #18192b,
+  'texte-courant': #2b2c3d,
   'texte-secondaire': #606274,
-  'fond-alterne':     #f4f4f6,
-  'bordure':          #e1e2e6,
-  'principale':       #c83b23,
-  'survol':           #a62d19,
-  'accent':           #eeb84e,
-  'erreur':           #be2318,
-  'scene-lac':        #1F4E8C,
-  'scene-foret':      #2F6B3A,
-  'scene-kiosque':    #B87A1E
+  'fond-alterne': #f4f4f6,
+  'bordure': #e1e2e6,
+  'bordure-champ': #c7c8d0,
+  'principale': #c83b23,
+  'survol': #a62d19,
+  'accent': #eeb84e,
+  'erreur': #be2318,
+  'focus': rgba(200, 59, 35, .18),
+  'desactive': #8e8ca3,
+  'scene-lac': #1F4E8C,
+  'scene-foret': #2F6B3A,
+  'scene-kiosque': #B87A1E
 );
 
 $tailles-police: (
-  'petite':      14px,
-  'courante':     16px,
+  'petite': 14px,
+  'courante': 16px,
   'introduction': 20px,
-  'sous-titre':   28px,
-  'titre':        40px,
+  'sous-titre': 28px,
+  'titre': 40px
 );
 
 $espacements: (
-  'p': 8px, 'm': 16px, 'g': 24px, 'tg': 40px, 'max': 64px
+  'p': 8px,
+  'm': 16px,
+  'g': 24px,
+  'tg': 40px,
+  'max': 64px
 );
 
 $rayons: (
-  'p': 4px, 'm': 8px, 'g': 16px
+  'p': 4px,
+  'm': 8px,
+  'g': 16px,
+  'case': 4px,
+  'pilule': 999px
 );
 
-
 $points-rupture: (
-  'mobile':  375px,
+  'mobile': 375px,
   'tablette': 768px,
-  'bureau':   1024px
+  'bureau': 1024px
 );

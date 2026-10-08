@@ -195,8 +195,8 @@
     gap: 24px;
   }
 
-  .grille-formulaires-alignes .champ,
-  .grille-formulaires-alignes > .case-a-cocher {
-    position: static !important;
-  }
+ .grille-formulaires-alignes .champ,
+.grille-formulaires-alignes > .case-a-cocher {
+  position: static;
+}
 }
