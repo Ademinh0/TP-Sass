@@ -1,24 +1,167 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Infos pratiques - Festival Résonances">
   <title>Infos pratiques | Festival Résonances</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <header>
-    <p>Festival Résonances</p>
+<body class="page-infos">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header__interieur">
+      <a class="site-header__marque" href="index.html">
+        <span class="site-header__logo" aria-hidden="true"></span>
+        <span>
+          <span class="site-header__nom">RÉSONANCES</span>
+          <span class="site-header__date">Festival · 9 au 11 juillet 2027</span>
+        </span>
+      </a>
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a class="site-header__lien" href="index.html">Accueil</a>
+        <a class="site-header__lien" href="programme.html">Programme</a>
+        <a class="site-header__lien" href="billetterie.html">Billetterie</a>
+        <a class="site-header__lien site-header__lien--actif" href="infos.html" aria-current="page">Infos pratiques</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="bouton bouton--contour" type="button" data-theme-toggle>Mode sombre</button>
+        <a class="bouton bouton--principal" href="billetterie.html">Réserver</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <h1>Infos pratiques</h1>
-    <p>Accès, horaires et questions fréquentes.</p>
+    <!-- TITRE -->
+    <section class="entete-page">
+      <div class="conteneur-page">
+        <p class="entete-page__fil">Accueil / Infos pratiques</p>
+        <h1 class="entete-page__titre">Infos pratiques</h1>
+        <p class="entete-page__description">Tout ce qu'il faut savoir pour préparer votre venue.</p>
+      </div>
+    </section>
+
+    <div class="infos-pratiques conteneur-page">
+
+      <!-- INFORMATIONS -->
+      <section class="infos-pratiques__grille" aria-label="Informations essentielles">
+
+        <article class="carte-info carte-info--page">
+          <span class="carte-info__numero">1</span>
+          <h2 class="carte-info__titre">Accès</h2>
+          <p class="carte-info__texte">En train : gare de Saint-Aulnes, puis navette gratuite toutes les 20 minutes.<br>En voiture : parking P1 à 800 m, 5 € la journée.<br>À vélo : parking sécurisé à l'entrée.</p>
+        </article>
+
+        <article class="carte-info carte-info--page">
+          <span class="carte-info__numero">2</span>
+          <h2 class="carte-info__titre">Horaires</h2>
+          <p class="carte-info__texte">Vendredi 9 : 17 h – 2 h<br>Samedi 10 : 14 h – 3 h<br>Dimanche 11 : 14 h – 0 h<br>Ouverture des portes une heure avant le premier concert.</p>
+        </article>
+
+        <article class="carte-info carte-info--page">
+          <span class="carte-info__numero">3</span>
+          <h2 class="carte-info__titre">Sur place</h2>
+          <p class="carte-info__texte">Restauration locale et végétarienne, paiement par carte uniquement.<br>Espace calme et poste de secours.<br>Site accessible aux personnes à mobilité réduite.</p>
+        </article>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-pratique" aria-labelledby="titre-faq">
+        <h2 id="titre-faq">Questions fréquentes</h2>
+        <div class="accordeon faq-pratique__accordeon">
+
+          <details class="accordeon__item" open>
+            <summary class="accordeon__en-tete">
+              <span class="accordeon__question">Puis-je revendre mon pass ?</span>
+              <span class="accordeon__icone" aria-hidden="true"></span>
+            </summary>
+            <div class="accordeon__contenu">
+              <p>Oui, via la plateforme officielle de revente, jusqu'à 48 heures avant le festival. Le pass est alors réédité au nom du nouvel acheteur.</p>
+            </div>
+          </details>
+
+          <details class="accordeon__item">
+            <summary class="accordeon__en-tete">
+              <span class="accordeon__question">Les enfants sont-ils acceptés ?</span>
+              <span class="accordeon__icone" aria-hidden="true"></span>
+            </summary>
+            <div class="accordeon__contenu">
+              <p>Oui, les enfants sont acceptés s'ils sont accompagnés d'un adulte responsable.</p>
+            </div>
+          </details>
+
+          <details class="accordeon__item">
+            <summary class="accordeon__en-tete">
+              <span class="accordeon__question">Peut-on sortir et revenir dans la journée ?</span>
+              <span class="accordeon__icone" aria-hidden="true"></span>
+            </summary>
+            <div class="accordeon__contenu">
+              <p>Oui, conservez votre bracelet pour pouvoir accéder de nouveau au festival.</p>
+            </div>
+          </details>
+
+          <details class="accordeon__item">
+            <summary class="accordeon__en-tete">
+              <span class="accordeon__question">Les animaux sont-ils admis ?</span>
+              <span class="accordeon__icone" aria-hidden="true"></span>
+            </summary>
+            <div class="accordeon__contenu">
+              <p>Les animaux de compagnie ne sont pas admis sur le site, sauf les chiens d'assistance.</p>
+            </div>
+          </details>
+
+          <details class="accordeon__item">
+            <summary class="accordeon__en-tete">
+              <span class="accordeon__question">Que faire en cas de pluie ?</span>
+              <span class="accordeon__icone" aria-hidden="true"></span>
+            </summary>
+            <div class="accordeon__contenu">
+              <p>Prévoyez des vêtements adaptés. Les informations importantes seront communiquées par l'organisation.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact-pratique">
+        <div>
+          <h2>Une autre question ?</h2>
+          <p>L'équipe vous répond du lundi au vendredi, de 9 h à 18 h.</p>
+        </div>
+        <a class="bouton bouton--secondaire" href="mailto:contact@resonances-festival.fr">Nous écrire</a>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    <small>Festival Résonances</small>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__interieur">
+      <div class="site-footer__grille">
+        <div class="site-footer__colonne site-footer__colonne--marque">
+          <h2 class="site-footer__titre">RÉSONANCES</h2>
+          <p class="site-footer__texte">Festival de musique au bord du lac des Aulnes. Trois jours, trois scènes, une quarantaine d'artistes.</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--festival">
+          <h2 class="site-footer__titre">Le festival</h2>
+          <div class="site-footer__liens">
+            <a class="site-footer__lien" href="programme.html">Programme</a>
+            <a class="site-footer__lien" href="billetterie.html">Billetterie</a>
+            <a class="site-footer__lien" href="infos.html">Infos pratiques</a>
+          </div>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--contact">
+          <h2 class="site-footer__titre">Contact</h2>
+          <p class="site-footer__coordonnees"><a href="mailto:contact@resonances-festival.fr">contact@resonances-festival.fr</a></p>
+          <p class="site-footer__coordonnees">04 00 00 00 00</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--newsletter">
+          <h2 class="site-footer__titre">Newsletter</h2>
+          <input class="site-footer__champ" type="email" placeholder="Votre e-mail" aria-label="Votre e-mail" disabled>
+        </div>
+      </div>
+      <div class="site-footer__bas">© 2027 Association Résonances · Mentions légales · Accessibilité · Crédits photos · <a href="composants.html">Bibliothèque de composants</a></div>
+    </div>
   </footer>
 </body>
 </html>

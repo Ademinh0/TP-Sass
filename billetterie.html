@@ -1,24 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Billetterie - Festival Résonances">
   <title>Billetterie | Festival Résonances</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <header>
-    <p>Festival Résonances</p>
+<body class="page-billetterie">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header__interieur">
+      <a class="site-header__marque" href="index.html">
+        <span class="site-header__logo" aria-hidden="true"></span>
+        <span>
+          <span class="site-header__nom">RÉSONANCES</span>
+          <span class="site-header__date">Festival · 9 au 11 juillet 2027</span>
+        </span>
+      </a>
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a class="site-header__lien" href="index.html">Accueil</a>
+        <a class="site-header__lien" href="programme.html">Programme</a>
+        <a class="site-header__lien site-header__lien--actif" href="billetterie.html" aria-current="page">Billetterie</a>
+        <a class="site-header__lien" href="infos.html">Infos pratiques</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="bouton bouton--contour" type="button" data-theme-toggle>Mode sombre</button>
+        <a class="bouton bouton--principal" href="billetterie.html">Réserver</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <h1>Billetterie</h1>
-    <p>Trois formules de pass et un formulaire de réservation.</p>
+    <!-- TITRE -->
+    <section class="entete-page">
+      <div class="conteneur-page">
+        <p class="entete-page__fil">Accueil / Billetterie</p>
+        <h1 class="entete-page__titre">Billetterie</h1>
+        <p class="entete-page__description">Choisissez votre formule, puis réservez en quelques minutes.</p>
+      </div>
+    </section>
+
+    <section class="billetterie conteneur-page">
+      <!-- LES TROIS FORMULES -->
+      <div class="billetterie__offres">
+
+        <article class="carte-pass carte-pass--page">
+          <h2 class="carte-pass__titre">Pass 1 jour</h2>
+          <p class="carte-pass__prix">49 €</p>
+          <p class="carte-pass__description">Accès à toutes les scènes le jour choisi</p>
+          <ul class="carte-pass__liste">
+            <li>Accès aux trois scènes</li>
+            <li>Navette gratuite depuis la gare</li>
+            <li>Bracelet nominatif</li>
+          </ul>
+          <a class="bouton bouton--contour" href="#reservation">Choisir cette formule</a>
+        </article>
+
+        <article class="carte-pass carte-pass--page carte-pass--mise-en-avant">
+          <span class="carte-pass__badge">Le plus choisi</span>
+          <h2 class="carte-pass__titre">Pass 3 jours</h2>
+          <p class="carte-pass__prix">119 €</p>
+          <p class="carte-pass__description">Le festival en entier, du vendredi au dimanche</p>
+          <ul class="carte-pass__liste">
+            <li>Accès aux trois scènes</li>
+            <li>Navette gratuite depuis la gare</li>
+            <li>Accès prioritaire au Kiosque</li>
+            <li>Gobelet réutilisable offert</li>
+          </ul>
+          <a class="bouton bouton--principal" href="#reservation">Choisir cette formule</a>
+        </article>
+
+        <article class="carte-pass carte-pass--page">
+          <h2 class="carte-pass__titre">Pass 3 jours + camping</h2>
+          <p class="carte-pass__prix">159 €</p>
+          <p class="carte-pass__description">Le festival et un emplacement au camping du lac</p>
+          <ul class="carte-pass__liste">
+            <li>Tous les avantages du pass 3 jours</li>
+            <li>Emplacement de camping</li>
+            <li>Douches et consignes</li>
+          </ul>
+          <a class="bouton bouton--contour" href="#reservation">Choisir cette formule</a>
+        </article>
+      </div>
+
+      <!-- FORMULAIRE DE RESERVATION -->
+      <section class="reservation" id="reservation">
+        <h2 class="reservation__titre">Réserver</h2>
+        <p class="reservation__intro">Les champs marqués d'un astérisque sont obligatoires.</p>
+
+        <form class="reservation__formulaire">
+          <div class="reservation__grille">
+
+            <div class="champ">
+              <label class="champ__etiquette" for="prenom">Prénom *</label>
+              <input class="champ__saisie" type="text" id="prenom" name="prenom" placeholder="Camille" autocomplete="given-name" required>
+            </div>
+
+            <div class="champ">
+              <label class="champ__etiquette" for="nom">Nom *</label>
+              <input class="champ__saisie" type="text" id="nom" name="nom" placeholder="Durand" autocomplete="family-name" required>
+            </div>
+
+            <div class="champ">
+              <label class="champ__etiquette" for="email">E-mail *</label>
+              <input class="champ__saisie" type="email" id="email" name="email" placeholder="camille.durand@exemple.fr" autocomplete="email" required>
+            </div>
+
+            <div class="champ">
+              <label class="champ__etiquette" for="telephone">Téléphone</label>
+              <input class="champ__saisie" type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+            </div>
+
+            <div class="champ">
+              <label class="champ__etiquette" for="formule">Formule *</label>
+              <select class="champ__saisie liste-deroulante" id="formule" name="formule" required>
+                <option value="1-jour">Pass 1 jour</option>
+                <option value="3-jours" selected>Pass 3 jours</option>
+                <option value="camping">Pass 3 jours + camping</option>
+              </select>
+            </div>
+
+            <div class="champ">
+              <label class="champ__etiquette" for="quantite">Nombre de pass *</label>
+              <select class="champ__saisie liste-deroulante" id="quantite" name="quantite" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="case-a-cocher reservation__conditions">
+            <input class="case-a-cocher__saisie" type="checkbox" name="conditions" required>
+            <span class="case-a-cocher__carre" aria-hidden="true"></span>
+            <span class="case-a-cocher__libelle">J'accepte les conditions générales de vente *</span>
+          </label>
+
+          <div class="reservation__bas">
+            <p class="reservation__total">Total : 238 € <small>(exemple : 2 pass 3 jours)</small></p>
+            <button class="bouton bouton--principal" type="button">Valider la réservation</button>
+          </div>
+          <p class="reservation__note">Démonstration : aucune réservation ni paiement n'est enregistré.</p>
+        </form>
+      </section>
+    </section>
   </main>
 
-  <footer>
-    <small>Festival Résonances</small>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__interieur">
+      <div class="site-footer__grille">
+        <div class="site-footer__colonne site-footer__colonne--marque">
+          <h2 class="site-footer__titre">RÉSONANCES</h2>
+          <p class="site-footer__texte">Festival de musique au bord du lac des Aulnes. Trois jours, trois scènes, une quarantaine d'artistes.</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--festival">
+          <h2 class="site-footer__titre">Le festival</h2>
+          <div class="site-footer__liens">
+            <a class="site-footer__lien" href="programme.html">Programme</a>
+            <a class="site-footer__lien" href="billetterie.html">Billetterie</a>
+            <a class="site-footer__lien" href="infos.html">Infos pratiques</a>
+          </div>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--contact">
+          <h2 class="site-footer__titre">Contact</h2>
+          <p class="site-footer__coordonnees"><a href="mailto:contact@resonances-festival.fr">contact@resonances-festival.fr</a></p>
+          <p class="site-footer__coordonnees">04 00 00 00 00</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--newsletter">
+          <h2 class="site-footer__titre">Newsletter</h2>
+          <input class="site-footer__champ" type="email" placeholder="Votre e-mail" aria-label="Votre e-mail" disabled>
+        </div>
+      </div>
+      <div class="site-footer__bas">© 2027 Association Résonances · Mentions légales · Accessibilité · Crédits photos · <a href="composants.html">Bibliothèque de composants</a></div>
+    </div>
   </footer>
 </body>
 </html>
