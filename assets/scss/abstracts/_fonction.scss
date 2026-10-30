@@ -1,0 +1,7 @@
+
+// pour pouvoir lire une valeur dans map 
+@use 'sass:map';
+
+@function valeur($liste, $nom) {
+  @return map.get($liste, $nom);
+}

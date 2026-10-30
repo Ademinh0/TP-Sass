@@ -1,24 +1,152 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Artiste - Festival Résonances">
-  <title>Artiste | Festival Résonances</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Ostra | Festival Résonances</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <header>
-    <p>Festival Résonances</p>
+<body class="page-artiste">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header__interieur">
+      <a class="site-header__marque" href="index.html">
+        <span class="site-header__logo" aria-hidden="true"></span>
+        <span>
+          <span class="site-header__nom">RÉSONANCES</span>
+          <span class="site-header__date">Festival · 9 au 11 juillet 2027</span>
+        </span>
+      </a>
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a class="site-header__lien" href="index.html">Accueil</a>
+        <a class="site-header__lien site-header__lien--actif" href="programme.html" aria-current="page">Programme</a>
+        <a class="site-header__lien" href="billetterie.html">Billetterie</a>
+        <a class="site-header__lien" href="infos.html">Infos pratiques</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="bouton bouton--contour" type="button" data-theme-toggle>Mode sombre</button>
+        <a class="bouton bouton--principal" href="billetterie.html">Réserver</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <h1>Fiche artiste</h1>
-    <p>Photo, biographie, créneau de passage et artistes de la même scène.</p>
+    <!-- BANDEAU ARTISTE -->
+    <section class="bandeau-artiste">
+      <div class="conteneur-page">
+        <p class="bandeau-artiste__fil">Accueil / Programme / Ostra</p>
+        <span class="badge badge--foret bandeau-artiste__badge">Scène de la Forêt</span>
+        <h1 class="bandeau-artiste__titre">OSTRA</h1>
+        <p class="bandeau-artiste__description">Électro · Samedi 10 juillet · 23 h 45</p>
+      </div>
+    </section>
+
+    <!-- BIOGRAPHIE -->
+    <section class="fiche-artiste conteneur-page">
+      <img class="fiche-artiste__photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/DJ%20at%20an%20Electronic%20Music%20Festival%20%28Unsplash%29.jpg?width=1000" alt="DJ sur scène avec des jeux de lumière">
+
+      <div class="fiche-artiste__contenu">
+        <h2 class="fiche-artiste__titre">Biographie</h2>
+        <p>Ostra est le projet du producteur lyonnais Élie Marchand. Nourri de techno berlinoise et de musiques de film, il construit des sets lents qui montent jusqu'à l'aube, entre nappes analogiques et rythmiques sèches.</p>
+        <p>Son deuxième album, <em>Lisières</em>, est sorti au printemps. Il le joue pour la première fois en plein air, au cœur de la forêt.</p>
+
+        <dl class="fiche-artiste__infos">
+          <div>
+            <dt>Jour</dt>
+            <dd>Samedi 10 juillet</dd>
+          </div>
+          <div>
+            <dt>Heure</dt>
+            <dd>23 h 45 – 01 h 00</dd>
+          </div>
+          <div>
+            <dt>Scène</dt>
+            <dd>Scène de la Forêt</dd>
+          </div>
+        </dl>
+
+        <div class="fiche-artiste__actions">
+          <a class="bouton bouton--scene-foret" href="programme.html?scene=foret">Voir mon programme</a>
+          <a class="bouton bouton--contour" href="billetterie.html">Réserver</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTRES ARTISTES -->
+    <section class="artistes-lies conteneur-page">
+      <h2>Autres artistes de la Scène de la Forêt</h2>
+      <div class="artistes-lies__grille">
+
+        <article class="carte-artiste carte-artiste--programme carte-artiste--foret">
+          <div class="carte-artiste__image">
+            <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Meshuggah%20Stage%20Design%202022%2C%20Ancienne%20Belgique%2C%20Belgium.%2008.jpg?width=900" alt="Scène de concert éclairée en rouge" loading="lazy">
+          </div>
+          <div class="carte-artiste__contenu">
+            <span class="badge badge--foret">Scène de la Forêt</span>
+            <h3 class="carte-artiste__titre">Vertige 808</h3>
+            <p class="carte-artiste__metas">Techno · Ven. 9 · 23 h 30</p>
+            <a class="carte-artiste__lien" href="">Voir la fiche →</a>
+          </div>
+        </article>
+
+        <article class="carte-artiste carte-artiste--programme carte-artiste--foret">
+          <div class="carte-artiste__image">
+            <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Recording%20a%20concert%20%28Unsplash%29.jpg?width=900" alt="Une personne filme un concert" loading="lazy">
+          </div>
+          <div class="carte-artiste__contenu">
+            <span class="badge badge--foret">Scène de la Forêt</span>
+            <h3 class="carte-artiste__titre">Brume</h3>
+            <p class="carte-artiste__metas">House · Sam. 10 · 01 h 00</p>
+            <a class="carte-artiste__lien" href="">Voir la fiche →</a>
+          </div>
+        </article>
+
+        <article class="carte-artiste carte-artiste--programme carte-artiste--foret">
+          <div class="carte-artiste__image">
+            <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Meshuggah%202017%20Live%20Birmingham%20Lighting.jpg?width=900" 
+            alt="Festival et faisceaux lumineux bleus">
+          </div>
+          <div class="carte-artiste__contenu">
+            <span class="badge badge--foret">Scène de la Forêt</span>
+            <h3 class="carte-artiste__titre">Sylve</h3>
+            <p class="carte-artiste__metas">Ambient · Dim. 11 · 20 h 00</p>
+            <a class="carte-artiste__lien" href="">Voir la fiche →</a>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <small>Festival Résonances</small>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__interieur">
+      <div class="site-footer__grille">
+        <div class="site-footer__colonne site-footer__colonne--marque">
+          <h2 class="site-footer__titre">RÉSONANCES</h2>
+          <p class="site-footer__texte">Festival de musique au bord du lac des Aulnes. Trois jours, trois scènes, une quarantaine d'artistes.</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--festival">
+          <h2 class="site-footer__titre">Le festival</h2>
+          <div class="site-footer__liens">
+            <a class="site-footer__lien" href="programme.html">Programme</a>
+            <a class="site-footer__lien" href="billetterie.html">Billetterie</a>
+            <a class="site-footer__lien" href="infos.html">Infos pratiques</a>
+          </div>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--contact">
+          <h2 class="site-footer__titre">Contact</h2>
+          <p class="site-footer__coordonnees"><a href="mailto:contact@resonances-festival.fr">contact@resonances-festival.fr</a></p>
+          <p class="site-footer__coordonnees">04 00 00 00 00</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--newsletter">
+          <h2 class="site-footer__titre">Newsletter</h2>
+          <input class="site-footer__champ" type="email" placeholder="Votre e-mail" aria-label="Votre e-mail" disabled>
+        </div>
+      </div>
+      <div class="site-footer__bas">© 2027 Association Résonances · Mentions légales · Accessibilité · Crédits photos · <a href="composants.html">Bibliothèque de composants</a></div>
+    </div>
   </footer>
 </body>
 </html>

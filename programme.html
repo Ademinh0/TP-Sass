@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme | Festival Résonances</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-programme">
+
+  
+  <header class="site-header">
+    <div class="site-header__interieur">
+      <a class="site-header__marque" href="index.html">
+        <span class="site-header__logo"></span>
+        <span>
+          <span class="site-header__nom">RÉSONANCES</span>
+          <span class="site-header__date">Festival · 9 au 11 juillet 2027</span>
+        </span>
+      </a>
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a class="site-header__lien" href="index.html">Accueil</a>
+        <a class="site-header__lien site-header__lien--actif" href="programme.html" aria-current="page">Programme</a>
+        <a class="site-header__lien" href="billetterie.html">Billetterie</a>
+        <a class="site-header__lien" href="infos.html">Infos pratiques</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="bouton bouton--contour" type="button" data-theme-toggle aria-pressed="false">Mode sombre</button>
+        <a class="bouton bouton--principal" href="billetterie.html">Réserver</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="entete-page">
+      <div class="conteneur-page">
+        <p class="entete-page__fil">Accueil / Programme</p>
+        <h1 class="entete-page__titre">Programme</h1>
+        <p class="entete-page__description">Quarante concerts sur trois jours. Filtrez par scène pour composer votre parcours.</p>
+      </div>
+    </section>
+
+    <div class="programme conteneur-page">
+      
+      <section class="filtres-programme">
+        <p class="filtres-programme__titre">Filtrer par scène</p>
+        <div class="filtres-programme__ligne">
+          <div class="groupe-filtres">
+            <button class="bouton-filtre" type="button" data-filtre="toutes" aria-pressed="true">Toutes les scènes</button>
+            <button class="bouton-filtre" type="button" data-filtre="lac" aria-pressed="false">Scène du Lac</button>
+            <button class="bouton-filtre" type="button" data-filtre="foret" aria-pressed="false">Scène de la Forêt</button>
+            <button class="bouton-filtre" type="button" data-filtre="kiosque" aria-pressed="false">Le Kiosque</button>
+          </div>
+          <p class="filtres-programme__compteur" data-compteur aria-live="polite">9 concerts affichés</p>
+        </div>
+      </section>
+
+      <!-- VENDREDI -->
+      <section class="journee" data-journee>
+        <h2 class="journee__titre">Vendredi 9 juillet</h2>
+        <div class="journee__grille">
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--kiosque" data-concert data-scene="kiosque">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/WiKi%20TubisTrio20100603a.jpg?width=960" alt="Concert de jazz" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--kiosque">Le Kiosque</span>
+              <h3 class="carte-artiste__titre">Clara Ninon Quartet</h3>
+              <p class="carte-artiste__metas">Jazz vocal · Ven. 9 · 18 h 30</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--lac" data-concert data-scene="lac">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vibrant%20drum%20kit%20illuminated%20with%20blue%20lighting%20at%20a%20live%20music%20event%20in%20an%20indoor%20venue.jpg?width=960" alt="Batterie éclairée en bleu" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--lac">Scène du Lac</span>
+              <h3 class="carte-artiste__titre">Marée Basse</h3>
+              <p class="carte-artiste__metas">Rock · Ven. 9 · 20 h 15</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--foret" data-concert data-scene="foret">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Meshuggah%20Stage%20Design%202022%2C%20Ancienne%20Belgique%2C%20Belgium.%2008.jpg?width=960" alt="Scène avec éclairages rouges" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--foret">Scène de la Forêt</span>
+              <h3 class="carte-artiste__titre">Vertige 808</h3>
+              <p class="carte-artiste__metas">Techno · Ven. 9 · 23 h 30</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SAMEDI -->
+      <section class="journee" data-journee>
+        <h2 class="journee__titre">Samedi 10 juillet</h2>
+        <div class="journee__grille">
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--kiosque" data-concert data-scene="kiosque">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Drums%20%28116880937%29.jpeg?width=960" alt="Batterie de concert" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--kiosque">Le Kiosque</span>
+              <h3 class="carte-artiste__titre">Cordes Sensibles</h3>
+              <p class="carte-artiste__metas">Acoustique · Sam. 10 · 17 h 30</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--lac" data-concert data-scene="lac">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Live%20rock%20band%20performance%20under%20stage%20lights%20during%20an%20outdoor%20festival%20in%20the%20evening.jpg?width=960" alt="Groupe de rock en concert" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--lac">Scène du Lac</span>
+              <h3 class="carte-artiste__titre">Les Hautes Herbes</h3>
+              <p class="carte-artiste__metas">Folk rock · Sam. 10 · 21 h 00</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--foret" data-concert data-scene="foret">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/DJ%20at%20an%20Electronic%20Music%20Festival%20%28Unsplash%29.jpg?width=960" alt="DJ en concert" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--foret">Scène de la Forêt</span>
+              <h3 class="carte-artiste__titre">Ostra</h3>
+              <p class="carte-artiste__metas">Électro · Sam. 10 · 23 h 45</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- DIMANCHE -->
+      <section class="journee" data-journee>
+        <h2 class="journee__titre">Dimanche 11 juillet</h2>
+        <div class="journee__grille">
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--kiosque" data-concert data-scene="kiosque">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiki%20loves%20Music%20-%20Hamburg-5591.jpg?width=960" alt="Concert de jazz" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--kiosque">Le Kiosque</span>
+              <h3 class="carte-artiste__titre">Nuit Blanche Big Band</h3>
+              <p class="carte-artiste__metas">Swing · Dim. 11 · 16 h 00</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--foret" data-concert data-scene="foret">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Meshuggah%202017%20Live%20Birmingham%20Lighting.jpg?width=960" alt="Festival de musique électronique" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--foret">Scène de la Forêt</span>
+              <h3 class="carte-artiste__titre">Sylve</h3>
+              <p class="carte-artiste__metas">Ambient · Dim. 11 · 20 h 00</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+
+          <article class="carte-artiste carte-artiste--programme carte-artiste--lac" data-concert data-scene="lac">
+            <div class="carte-artiste__image">
+              <img class="carte-artiste__visuel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Meshuggah%20Stage%20Design%202022%2C%20Ancienne%20Belgique%2C%20Belgium.%2005.jpg?width=960" alt="Concert avec éclairages rouges" loading="lazy">
+            </div>
+            <div class="carte-artiste__contenu">
+              <span class="badge badge--lac">Scène du Lac</span>
+              <h3 class="carte-artiste__titre">Écho Nord</h3>
+              <p class="carte-artiste__metas">Pop rock · Dim. 11 · 21 h 30</p>
+              <a class="carte-artiste__lien" href="artiste.html">Voir la fiche →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-footer__interieur">
+      <div class="site-footer__grille">
+        <div class="site-footer__colonne site-footer__colonne--marque">
+          <h2 class="site-footer__titre">RÉSONANCES</h2>
+          <p class="site-footer__texte">Festival de musique au bord du lac des Aulnes. Trois jours, trois scènes, une quarantaine d'artistes.</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--festival">
+          <h2 class="site-footer__titre">Le festival</h2>
+          <div class="site-footer__liens">
+            <a class="site-footer__lien" href="programme.html">Programme</a>
+            <a class="site-footer__lien" href="billetterie.html">Billetterie</a>
+            <a class="site-footer__lien" href="infos.html">Infos pratiques</a>
+          </div>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--contact">
+          <h2 class="site-footer__titre">Contact</h2>
+          <p class="site-footer__coordonnees"><a href="mailto:contact@resonances-festival.fr">contact@resonances-festival.fr</a></p>
+          <p class="site-footer__coordonnees">04 00 00 00 00</p>
+        </div>
+        <div class="site-footer__colonne site-footer__colonne--newsletter">
+          <h2 class="site-footer__titre">Newsletter</h2>
+          <input class="site-footer__champ" type="email" placeholder="Votre e-mail" aria-label="Newsletter, bientôt disponible" disabled>
+        </div>
+      </div>
+      <div class="site-footer__bas">© 2027 Association Résonances · <a href="infos.html">Mentions légales</a> · Accessibilité · Crédits photos · <a href="composants.html">Bibliothèque de composants</a></div>
+    </div>
+  </footer>
+</body>
+</html>

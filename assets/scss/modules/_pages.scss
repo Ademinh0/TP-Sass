@@ -1,0 +1,486 @@
+
+// Styles des pages Accueil et Programme
+@use '../abstracts' as a;
+
+// ==================== ACCUEIL ====================
+
+.page-accueil {
+  background: var(--couleur-fond-page, #fff);
+  color: var(--couleur-texte-principal);
+  font-family: Inter, Arial, sans-serif;
+}
+
+// Bannière
+.banniere {
+  min-height: a.$hauteur-banniere;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--couleur-texte-principal);
+  color: white;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgb(8 13 38 / 86%), rgb(8 13 38 / 40%)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Meshuggah%202017%20Live%20Birmingham%20Lighting.jpg?width=1500');
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__contenu {
+    position: relative;
+    padding-block: var(--espacement-max);
+  }
+
+  &__date {
+    margin: 0 0 var(--espacement-g);
+    color: var(--couleur-accent);
+    font-weight: 700;
+    font-size: var(--taille-police-petite);
+  }
+
+  &__titre {
+    max-width: 780px;
+    margin: 0 0 var(--espacement-g);
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.14;
+    font-weight: 800;
+  }
+
+  &__texte {
+    max-width: 610px;
+    margin: 0 0 var(--espacement-tg);
+    font-size: var(--taille-police-introduction);
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacement-m);
+  }
+}
+
+// Présentation du festival
+.presentation {
+  padding-block: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacement-max);
+  align-items: center;
+
+  &__texte {
+    h2 {
+      margin: 0 0 var(--espacement-g);
+      font-size: var(--taille-police-titre);
+    }
+
+    p {
+      max-width: 530px;
+      margin: 0;
+      color: var(--couleur-texte-courant);
+      line-height: 1.7;
+    }
+  }
+
+  &__chiffres {
+    @include a.grille(3);
+  }
+
+  &__chiffre {
+    min-height: 180px;
+    padding: var(--espacement-g);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--rayon-m);
+    background: var(--couleur-fond-alterne);
+
+    strong {
+      color: var(--couleur-principale);
+      font-size: 56px;
+    }
+
+    span {
+      margin-top: var(--espacement-p);
+      color: var(--couleur-texte-secondaire);
+    }
+  }
+}
+
+// Têtes d'affiche
+.affiches {
+  padding-block: var(--espacement-max);
+
+  &__entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacement-g);
+    margin-bottom: var(--espacement-tg);
+
+    h2 {
+      margin: 0;
+      font-size: var(--taille-police-titre);
+    }
+
+    a {
+      color: var(--couleur-principale);
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  &__grille {
+    @include a.grille(3);
+  }
+}
+
+// Les trois scènes
+.scenes {
+  padding-block: var(--espacement-tg);
+  padding-bottom: 60px;
+
+  h2 {
+    margin: 0 0 var(--espacement-tg);
+    font-size: var(--taille-police-titre);
+  }
+
+  &__grille {
+    @include a.grille(3);
+  }
+}
+
+// Bouton transparent de la bannière
+.bouton--transparent {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+
+  &:hover {
+    background: rgb(255 255 255 / 20%);
+  }
+}
+
+// Responsive de l'accueil
+@include a.responsive('tablette') {
+  .banniere {
+    min-height: 450px;
+
+    &__texte {
+      font-size: var(--taille-police-courante);
+    }
+  }
+
+  .presentation {
+    grid-template-columns: 1fr;
+    gap: var(--espacement-tg);
+  }
+
+  .affiches__grille,
+  .scenes__grille {
+    @include a.grille(1);
+  }
+
+  .affiches__entete {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scenes {
+    padding-bottom: var(--espacement-max);
+  }
+}
+
+// ==================== PROGRAMME ====================
+
+.page-programme {
+  color: var(--couleur-texte-principal);
+  background: var(--couleur-fond-page, #fff);
+  font-family: Inter, Arial, sans-serif;
+}
+
+// Titre du programme
+.entete-page {
+  padding-block: 48px;
+  background: var(--couleur-fond-alterne);
+
+  &__fil {
+    margin: 0 0 var(--espacement-m);
+    color: var(--couleur-texte-secondaire);
+    font-size: var(--taille-police-petite);
+  }
+
+  &__titre {
+    margin: 0 0 var(--espacement-m);
+    font-size: var(--taille-police-titre);
+  }
+
+  &__description {
+    margin: 0;
+    font-size: var(--taille-police-introduction);
+    color: var(--couleur-texte-courant);
+  }
+}
+
+.programme {
+  padding-top: 10px;
+  padding-bottom: var(--espacement-max);
+}
+
+// Zone de filtres
+.filtres-programme {
+  margin-bottom: var(--espacement-max);
+
+  &__titre {
+    margin: 0 0 var(--espacement-m);
+    color: var(--couleur-texte-secondaire);
+    font-weight: 700;
+    font-size: var(--taille-police-petite);
+  }
+
+  &__ligne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacement-m);
+  }
+
+  &__compteur {
+    margin: 0;
+    color: var(--couleur-texte-secondaire);
+    font-size: var(--taille-police-petite);
+    white-space: nowrap;
+  }
+}
+
+// Concerts par journée
+.journee {
+  margin-top: var(--espacement-max);
+
+  &__titre {
+    margin: 0 0 var(--espacement-g);
+    padding-bottom: var(--espacement-m);
+    border-bottom: 1px solid var(--couleur-bordure);
+    font-size: var(--taille-police-sous-titre);
+  }
+
+  &__grille {
+    @include a.grille(3);
+  }
+}
+
+// Masquer les concerts avec JavaScript
+[data-concert][hidden],
+[data-journee][hidden] {
+  display: none;
+}
+
+// Responsive programme
+@include a.responsive('tablette') {
+  .entete-page {
+    padding-block: var(--espacement-tg);
+
+    &__description {
+      font-size: var(--taille-police-courante);
+    }
+  }
+
+  .filtres-programme__ligne {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .journee__grille {
+    @include a.grille(1);
+  }
+}
+
+// ==================== COMPOSANTS REUTILISES ====================
+
+// Mise en page générale
+:root {
+  --couleur-fond-page: #fff;
+}
+
+.page-accueil,
+.page-programme {
+  min-width: 320px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.page-accueil h1,
+.page-accueil h2,
+.page-programme h1,
+.page-programme h2 {
+  line-height: 1.2;
+}
+
+.page-accueil .bouton,
+.page-programme .bouton {
+  text-decoration: none;
+}
+
+// Nouvelles variantes de tes cartes existantes
+.carte-artiste {
+  &__visuel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--programme,
+  &--vedette {
+    width: 100%;
+    flex: initial;
+    display: block;
+    border-radius: var(--rayon-m);
+    background: var(--couleur-fond-page);
+
+    .carte-artiste__contenu {
+      padding: var(--espacement-m) var(--espacement-g);
+    }
+
+    .carte-artiste__titre {
+      margin-top: var(--espacement-p);
+    }
+
+    .carte-artiste__metas {
+      margin-top: var(--espacement-p);
+    }
+
+    .carte-artiste__lien {
+      position: absolute;
+      bottom: var(--espacement-g);
+      left: var(--espacement-g);
+    }
+  }
+
+  &--programme {
+    height: a.$hauteur-carte-programme;
+
+    .carte-artiste__image {
+      height: 222px;
+    }
+
+    .carte-artiste__contenu {
+      height: 178px;
+    }
+  }
+
+  &--vedette {
+    height: a.$hauteur-carte-vedette;
+
+    .carte-artiste__image {
+      height: 306px;
+    }
+
+    .carte-artiste__contenu {
+      height: 174px;
+    }
+
+    .carte-artiste__titre {
+      font-size: var(--taille-police-sous-titre);
+      line-height: 1.2;
+    }
+  }
+}
+
+// Variante des cartes de scène
+.carte-scene--large {
+  width: 100%;
+  height: 220px;
+  flex: initial;
+
+  .carte-scene__titre {
+    top: 76px;
+  }
+
+  .carte-scene__style {
+    top: 112px;
+  }
+
+  .carte-scene__lien {
+    top: 168px;
+  }
+}
+
+// Boucle, fonction et condition pour les couleurs
+@each $scene, $couleur in a.$scenes {
+  .carte-artiste--#{$scene} .carte-artiste__image {
+    border-bottom-color: a.valeur(a.$couleurs, $couleur);
+  }
+
+  .carte-scene--#{$scene} {
+    background: a.valeur(a.$couleurs, $couleur);
+
+    @if $scene == 'kiosque' {
+      color: var(--couleur-texte-principal);
+    }
+  }
+}
+
+// Bouton de filtre actif
+.bouton-filtre[aria-pressed='true'] {
+  background: var(--couleur-texte-principal);
+  border-color: var(--couleur-texte-principal);
+  color: white;
+}
+
+// Lien actif dans le header
+.site-header__lien--actif {
+  color: var(--couleur-texte-principal);
+  font-weight: 700;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+    height: 3px;
+    background: var(--couleur-principale);
+  }
+}
+
+// Liens du footer
+.site-footer__bas a,
+.site-footer__coordonnees a {
+  color: inherit;
+  text-decoration: none;
+}
+
+//= MODE SOMBRE =
+.page-accueil[data-theme='sombre'],
+.page-programme[data-theme='sombre'] {
+  --couleur-fond-page: #1c1b2e;
+  --couleur-texte-principal: #f4f5f7;
+  --couleur-texte-courant: #dad8e4;
+  --couleur-texte-secondaire: #c9c7d6;
+  --couleur-fond-alterne: #28273b;
+  --couleur-bordure: #48465c;
+
+  .site-header {
+    background: var(--couleur-fond-page);
+  }
+
+  .carte-artiste {
+    background: var(--couleur-fond-page);
+  }
+
+  .bouton-filtre {
+    background: var(--couleur-fond-page);
+    color: var(--couleur-texte-principal);
+  }
+
+  .bouton-filtre[aria-pressed='true'] {
+    background: var(--couleur-principale);
+    color: #fff;
+  }
+
+  .carte-scene--kiosque {
+    color: #1c1b2e;
+  }
+}

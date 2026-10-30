@@ -1,3 +1,4 @@
+
 $couleurs: (
   'texte-principal': #18192b,
   'texte-courant': #2b2c3d,
@@ -44,4 +45,16 @@ $points-rupture: (
   'mobile': 375px,
   'tablette': 768px,
   'bureau': 1024px
+);
+
+
+$hauteur-banniere: 560px;
+$hauteur-carte-programme: 400px;
+$hauteur-carte-vedette: 480px;
+
+
+$scenes: (
+  'lac': 'scene-lac',
+  'foret': 'scene-foret',
+  'kiosque': 'scene-kiosque'
 );

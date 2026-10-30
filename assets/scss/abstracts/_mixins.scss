@@ -1,0 +1,17 @@
+
+@use 'variables' as *;
+@use 'fonction' as *;
+
+// Créer une grille avec le nombre de colonnes choisi
+@mixin grille($colonnes: 3) {
+  display: grid;
+  grid-template-columns: repeat($colonnes, minmax(0, 1fr));
+  gap: valeur($espacements, 'g');
+}
+
+// Gérer le responsive avec les points de rupture
+@mixin responsive($format) {
+  @media (max-width: valeur($points-rupture, $format)) {
+    @content;
+  }
+}
