@@ -2,7 +2,7 @@
 // Étape 7 : Fiche artiste, billetterie, infos pratiques
 @use '../abstracts' as *;
 
-// la base des pages 
+// LA BASE DES PAGES
 .page-artiste, .page-billetterie, .page-infos {
   min-width: 320px;
   background: var(--couleur-fond-page, #fff);
@@ -16,7 +16,7 @@
   .bouton { text-decoration: none; }
 }
 
-// FICHE ARTISTE 
+// FICHE ARTISTE
 
 // Bandeau de l'artiste
 .bandeau-artiste {
@@ -33,10 +33,10 @@
 
 // Biographie et photo
 .fiche-artiste {
-  @include a.grille(2);
+  @include grille(2);
   grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
   gap: 60px;
-  padding-top: a.valeur(a.$espacements, 'max');
+  padding-top: valeur($espacements, 'max');
   align-items: start;
 
   &__photo {
@@ -48,6 +48,7 @@
 
   &__contenu { padding-top: 8px; }
   &__titre { margin: 0 0 22px; font-size: 28px; line-height: 1.3; }
+
   &__contenu > p {
     margin: 0 0 20px;
     color: var(--couleur-texte-courant);
@@ -68,19 +69,25 @@
       gap: 12px;
     }
 
-    dt { color: var(--couleur-texte-secondaire); font-weight: 700; font-size: 14px; }
+    dt {
+      color: var(--couleur-texte-secondaire);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
     dd { margin: 0; font-size: 16px; }
   }
 
   &__actions {
     display: flex;
-    gap: a.valeur(a.$espacements, 'm');
+    gap: valeur($espacements, 'm');
     flex-wrap: wrap;
   }
 }
 
 .bouton--scene-foret {
   background: var(--couleur-scene-foret);
+
   &:hover { background: #25552f; }
 }
 
@@ -90,14 +97,15 @@
   padding-bottom: 80px;
 
   h2 { margin: 0 0 36px; font-size: 28px; }
-  &__grille { @include a.grille(3); }
+  &__grille { @include grille(3); }
 }
 
-//  BILLETTERIE 
+// BILLETTERIE
 
 .billetterie { padding-block: 64px 80px; }
+
 .billetterie__offres {
-  @include a.grille(3);
+  @include grille(3);
   align-items: stretch;
   gap: 24px;
 }
@@ -185,6 +193,7 @@
       color: #d8d6e0;
       border-color: #3a3950;
     }
+
     .carte-pass__liste { color: white; }
     .carte-pass__liste li::before { color: var(--couleur-accent); }
   }
@@ -211,6 +220,7 @@
   border-radius: var(--rayon-m);
 
   &__titre { margin: 0 0 8px; font-size: 28px; }
+
   &__intro {
     margin: 0 0 30px;
     color: var(--couleur-texte-secondaire);
@@ -218,7 +228,7 @@
   }
 
   &__grille {
-    @include a.grille(2);
+    @include grille(2);
     column-gap: 24px;
     row-gap: 22px;
   }
@@ -261,7 +271,10 @@
 // INFOS PRATIQUES
 
 .infos-pratiques { padding-block: 64px 80px; }
-.infos-pratiques__grille { @include a.grille(3); }
+
+.infos-pratiques__grille {
+  @include grille(3);
+}
 
 // Réutilisation des cartes info
 .carte-info--page {
@@ -273,6 +286,7 @@
 
   .carte-info__numero { top: 30px; left: 30px; }
   .carte-info__titre { top: 38px; left: 88px; font-size: 20px; }
+
   .carte-info__texte {
     width: auto;
     position: static;
@@ -287,10 +301,27 @@
   margin-top: 72px;
 
   h2 { margin: 0 0 32px; font-size: 40px; }
-  &__accordeon { width: 100%; display: grid; gap: 16px; }
-  .accordeon__item { width: 100%; min-height: 72px; height: auto; }
+
+  &__accordeon {
+    width: 100%;
+    display: grid;
+    gap: 16px;
+  }
+
+  .accordeon__item {
+    width: 100%;
+    min-height: 72px;
+    height: auto;
+  }
+
   .accordeon__item[open] { min-height: 150px; }
-  .accordeon__en-tete { min-height: 70px; height: auto; padding-block: 18px; }
+
+  .accordeon__en-tete {
+    min-height: 70px;
+    height: auto;
+    padding-block: 18px;
+  }
+
   .accordeon__contenu { padding-bottom: 25px; }
   .accordeon__contenu p { max-width: 860px; }
 }
@@ -312,3 +343,92 @@
   .bouton { min-width: 188px; }
 }
 
+// RESPONSIVE
+
+@media (max-width: 1000px) {
+  .fiche-artiste {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .fiche-artiste__photo { height: 380px; }
+
+  .artistes-lies__grille,
+  .billetterie__offres,
+  .infos-pratiques__grille {
+    @include grille(2);
+  }
+
+  .billetterie__offres > :last-child,
+  .infos-pratiques__grille > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@include responsive('tablette') {
+  .bandeau-artiste {
+    min-height: 250px;
+    padding-block: 36px;
+
+    &__titre { font-size: 44px; }
+  }
+
+  .fiche-artiste {
+    padding-top: 40px;
+
+    &__photo { height: 310px; }
+  }
+
+  .artistes-lies { padding-block: 50px; }
+
+  .artistes-lies__grille,
+  .billetterie__offres,
+  .infos-pratiques__grille,
+  .reservation__grille {
+    @include grille(1);
+  }
+
+  .billetterie__offres > :last-child,
+  .infos-pratiques__grille > :last-child {
+    grid-column: auto;
+  }
+
+  .billetterie,
+  .infos-pratiques {
+    padding-block: 40px 60px;
+  }
+
+  .reservation {
+    margin-top: 40px;
+    padding: 28px 20px;
+
+    &__bas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .reservation__conditions {
+    height: auto;
+    align-items: flex-start;
+
+    .case-a-cocher__libelle { white-space: normal; }
+  }
+
+  .faq-pratique {
+    margin-top: 50px;
+
+    h2 { font-size: 32px; }
+  }
+
+  .faq-pratique .accordeon__contenu {
+    padding-right: 32px;
+  }
+
+  .contact-pratique {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+  }
+}

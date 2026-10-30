@@ -1787,4 +1787,465 @@ img {
   color: #1c1b2e;
 }
 
+.page-artiste, .page-billetterie, .page-infos {
+  min-width: 320px;
+  background: var(--couleur-fond-page, #fff);
+  color: var(--couleur-texte-principal);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.page-artiste main, .page-billetterie main, .page-infos main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.page-artiste h1, .page-artiste h2, .page-artiste h3, .page-artiste p, .page-billetterie h1, .page-billetterie h2, .page-billetterie h3, .page-billetterie p, .page-infos h1, .page-infos h2, .page-infos h3, .page-infos p {
+  overflow-wrap: break-word;
+}
+.page-artiste .bouton, .page-billetterie .bouton, .page-infos .bouton {
+  text-decoration: none;
+}
+
+.bandeau-artiste {
+  padding-block: 50px;
+  min-height: 300px;
+  background: var(--couleur-scene-foret);
+  color: white;
+}
+.bandeau-artiste__fil {
+  margin: 0 0 28px;
+  font-size: 14px;
+}
+.bandeau-artiste__badge {
+  background: white;
+  color: var(--couleur-scene-foret);
+}
+.bandeau-artiste__titre {
+  margin: 14px 0 4px;
+  font-size: 56px;
+  line-height: 1.15;
+}
+.bandeau-artiste__description {
+  margin: 0;
+  font-size: 20px;
+}
+
+.fiche-artiste {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
+  gap: 60px;
+  padding-top: 64px;
+  align-items: start;
+}
+.fiche-artiste__photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--rayon-m);
+}
+.fiche-artiste__contenu {
+  padding-top: 8px;
+}
+.fiche-artiste__titre {
+  margin: 0 0 22px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+.fiche-artiste__contenu > p {
+  margin: 0 0 20px;
+  color: var(--couleur-texte-courant);
+  line-height: 1.65;
+}
+.fiche-artiste__infos {
+  margin: 36px 0 28px;
+  padding: 22px 28px;
+  border-radius: var(--rayon-m);
+  background: var(--couleur-fond-alterne);
+  display: grid;
+  gap: 14px;
+}
+.fiche-artiste__infos > div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+}
+.fiche-artiste__infos dt {
+  color: var(--couleur-texte-secondaire);
+  font-weight: 700;
+  font-size: 14px;
+}
+.fiche-artiste__infos dd {
+  margin: 0;
+  font-size: 16px;
+}
+.fiche-artiste__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bouton--scene-foret {
+  background: var(--couleur-scene-foret);
+}
+.bouton--scene-foret:hover {
+  background: #25552f;
+}
+
+.artistes-lies {
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+.artistes-lies h2 {
+  margin: 0 0 36px;
+  font-size: 28px;
+}
+.artistes-lies__grille {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.billetterie {
+  padding-block: 64px 80px;
+}
+
+.billetterie__offres {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.carte-pass--page {
+  flex: initial;
+  width: 100%;
+  height: auto;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 32px 28px;
+  border-radius: var(--rayon-m);
+}
+.carte-pass--page::after {
+  display: none;
+}
+.carte-pass--page .carte-pass__titre,
+.carte-pass--page .carte-pass__prix,
+.carte-pass--page .carte-pass__liste,
+.carte-pass--page > .bouton {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+.carte-pass--page .carte-pass__titre {
+  font-size: 20px;
+  line-height: 1.3;
+}
+.carte-pass--page .carte-pass__prix {
+  margin-top: 18px;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.carte-pass--page .carte-pass__description {
+  min-height: 65px;
+  margin: 16px 0 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--couleur-bordure);
+  color: var(--couleur-texte-secondaire);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.carte-pass--page .carte-pass__liste {
+  flex: 1;
+  padding: 22px 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.carte-pass--page .carte-pass__liste li {
+  position: relative;
+  height: auto;
+  min-height: 30px;
+  padding-left: 24px;
+}
+.carte-pass--page .carte-pass__liste li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--couleur-scene-foret);
+  font-weight: 800;
+}
+.carte-pass--page > .bouton {
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+  padding-inline: 8px;
+}
+.carte-pass--page.carte-pass--mise-en-avant {
+  background: #1c1b2e;
+  border-color: #1c1b2e;
+}
+.carte-pass--page.carte-pass--mise-en-avant .carte-pass__description {
+  color: #d8d6e0;
+  border-color: #3a3950;
+}
+.carte-pass--page.carte-pass--mise-en-avant .carte-pass__liste {
+  color: white;
+}
+.carte-pass--page.carte-pass--mise-en-avant .carte-pass__liste li::before {
+  color: var(--couleur-accent);
+}
+.carte-pass--page .carte-pass__badge {
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  width: auto;
+  height: 32px;
+  padding: 8px 20px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--rayon-pilule);
+  font-weight: 700;
+}
+
+.reservation {
+  margin-top: 72px;
+  padding: 42px 48px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-m);
+}
+.reservation__titre {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+.reservation__intro {
+  margin: 0 0 30px;
+  color: var(--couleur-texte-secondaire);
+  font-size: 14px;
+}
+.reservation__grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  column-gap: 24px;
+  row-gap: 22px;
+}
+.reservation .champ {
+  width: 100%;
+  min-width: 0;
+}
+.reservation .champ__saisie {
+  width: 100%;
+}
+.reservation .liste-deroulante {
+  width: 100%;
+}
+.reservation__conditions {
+  margin-top: 30px;
+}
+.reservation__bas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-top: 36px;
+}
+.reservation__total {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.reservation__total small {
+  display: block;
+  margin-top: 3px;
+  color: var(--couleur-texte-secondaire);
+  font-size: 12px;
+  font-weight: 400;
+}
+.reservation__note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: var(--couleur-texte-secondaire);
+}
+
+.infos-pratiques {
+  padding-block: 64px 80px;
+}
+
+.infos-pratiques__grille {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.carte-info--page {
+  flex: initial;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  padding: 30px 32px;
+}
+.carte-info--page .carte-info__numero {
+  top: 30px;
+  left: 30px;
+}
+.carte-info--page .carte-info__titre {
+  top: 38px;
+  left: 88px;
+  font-size: 20px;
+}
+.carte-info--page .carte-info__texte {
+  width: auto;
+  position: static;
+  margin: 70px 0 0;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.faq-pratique {
+  margin-top: 72px;
+}
+.faq-pratique h2 {
+  margin: 0 0 32px;
+  font-size: 40px;
+}
+.faq-pratique__accordeon {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+}
+.faq-pratique .accordeon__item {
+  width: 100%;
+  min-height: 72px;
+  height: auto;
+}
+.faq-pratique .accordeon__item[open] {
+  min-height: 150px;
+}
+.faq-pratique .accordeon__en-tete {
+  min-height: 70px;
+  height: auto;
+  padding-block: 18px;
+}
+.faq-pratique .accordeon__contenu {
+  padding-bottom: 25px;
+}
+.faq-pratique .accordeon__contenu p {
+  max-width: 860px;
+}
+
+.contact-pratique {
+  margin-top: 80px;
+  padding: 32px 40px;
+  min-height: 140px;
+  background: var(--couleur-fond-alterne);
+  border-radius: var(--rayon-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.contact-pratique h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+.contact-pratique p {
+  margin: 0;
+  color: var(--couleur-texte-courant);
+}
+.contact-pratique .bouton {
+  min-width: 188px;
+}
+
+@media (max-width: 1000px) {
+  .fiche-artiste {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .fiche-artiste__photo {
+    height: 380px;
+  }
+  .artistes-lies__grille,
+  .billetterie__offres,
+  .infos-pratiques__grille {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .billetterie__offres > :last-child,
+  .infos-pratiques__grille > :last-child {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 768px) {
+  .bandeau-artiste {
+    min-height: 250px;
+    padding-block: 36px;
+  }
+  .bandeau-artiste__titre {
+    font-size: 44px;
+  }
+  .fiche-artiste {
+    padding-top: 40px;
+  }
+  .fiche-artiste__photo {
+    height: 310px;
+  }
+  .artistes-lies {
+    padding-block: 50px;
+  }
+  .artistes-lies__grille,
+  .billetterie__offres,
+  .infos-pratiques__grille,
+  .reservation__grille {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .billetterie__offres > :last-child,
+  .infos-pratiques__grille > :last-child {
+    grid-column: auto;
+  }
+  .billetterie,
+  .infos-pratiques {
+    padding-block: 40px 60px;
+  }
+  .reservation {
+    margin-top: 40px;
+    padding: 28px 20px;
+  }
+  .reservation__bas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .reservation__conditions {
+    height: auto;
+    align-items: flex-start;
+  }
+  .reservation__conditions .case-a-cocher__libelle {
+    white-space: normal;
+  }
+  .faq-pratique {
+    margin-top: 50px;
+  }
+  .faq-pratique h2 {
+    font-size: 32px;
+  }
+  .faq-pratique .accordeon__contenu {
+    padding-right: 32px;
+  }
+  .contact-pratique {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
